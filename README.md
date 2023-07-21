@@ -135,12 +135,12 @@
   - Malloc/Calloc: trả về con trỏ void (void*) nên cần ép kiểu dữ liệu trả về
   - Realloc: thay đổi kích thước ô nhớ
   
-    VD: uint8_t *ptr = (uint8_t*)malloc(5); -> Malloc tạo 5 ô nhớ mỗi ô nhớ 1 byte
+    VD: uint8_t *ptr = (uint8_t *)malloc(5); -> Malloc tạo 5 ô nhớ mỗi ô nhớ 1 byte
 
   Tổng quát:
-  - Malloc: uint8_t *ptr = (uint8_t*)malloc(5*sizeof(uint8_t));
-  - Calloc: uint8_t *ptr = (uint8_t*)calloc(5, sizeof(uint8_t));
-  - Thay đổi kích thước ô nhớ Realloc: ptr = (uint8_t*)realloc(ptr, 7*sizeof(uint8_t));
+  - Malloc: uint8_t * ptr = (uint8_t *)malloc(5 * sizeof(uint8_t));
+  - Calloc: uint8_t * ptr = (uint8_t *)calloc(5, sizeof(uint8_t));
+  - Thay đổi kích thước ô nhớ Realloc: ptr = (uint8_t *)realloc(ptr, 7 * sizeof(uint8_t));
   - Giải phóng: free(ptr);
   ## B4: VARIABLE
 
