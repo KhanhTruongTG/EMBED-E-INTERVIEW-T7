@@ -124,8 +124,7 @@
     
     VD: Tràn bộ nhớ Stack với hàm đệ quy vô hạn:
     int foo(x){
-      printf("de quy vo han\n");
-      return foo(x);
+    return foo(x);
     }
     + Heap: Nếu bạn liên tục cấp phát vùng nhớ mà không giải phóng thì sẽ bị lỗi tràn vùng nhớ Heap (Heap overflow), nếu bạn khởi tạo một vùng nhớ quá lớn mà vùng nhớ Heap không thể lưu trữ một lần được sẽ bị lỗi khởi tạo vùng nhớ Heap thất bại
     
