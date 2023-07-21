@@ -1,6 +1,7 @@
 # LÝ THUYẾT C PROGRAMMING LANGUAGE
   ## B1: C BASIC
-    ### Biến: embedded sẽ sử dụng thư viện #include <stdint.h>
+  ### - Biến: embedded sẽ sử dụng thư viện #include <stdint.h>
+    - Biến: embedded sẽ sử dụng thư viện #include <stdint.h>
       + uint8_t, uint16_t, uint32_t, uint64_t
       + VD: kích thước của biến uint32_t var;  0 -> 2^32-1
           kích thước của biến int32_t var;   (-2^32)/2 -> (2^32)/2-1 
