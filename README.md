@@ -1,3 +1,1 @@
 # C PROGRAMMING LANGUAGE
-  # C CƠ BẢN
-  
