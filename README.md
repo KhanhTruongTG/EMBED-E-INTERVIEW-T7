@@ -121,20 +121,29 @@
 
   - Vấn đề lỗi xảy ra đối với vùng nhớ
     + Stack: bởi vì bộ nhớ Stack cố định nên nếu chương trình bạn sử dụng quá nhiều bộ nhớ vượt quá khả năng lưu trữ của Stack chắc chắn sẽ xảy ra tình trạng tràn bộ nhớ Stack (Stack overflow), các trường hợp xảy ra như bạn khởi tạo quá nhiều biến cục bộ, hàm đệ quy vô hạn,...
-    
+
     VD: Tràn bộ nhớ Stack với hàm đệ quy vô hạn:
-    int foo(int x){
-    return foo(x);
-    }
+        
+        int foo(int x){
+
+          printf("De quy vo han\n");
+    
+          return foo(x);
+    
+        }
     + Heap: Nếu bạn liên tục cấp phát vùng nhớ mà không giải phóng thì sẽ bị lỗi tràn vùng nhớ Heap (Heap overflow), nếu bạn khởi tạo một vùng nhớ quá lớn mà vùng nhớ Heap không thể lưu trữ một lần được sẽ bị lỗi khởi tạo vùng nhớ Heap thất bại
     
     VD: Trường hợp khởi tạo vùng nhớ Heap quá lớn:
-    int *A = (int *)malloc(18446744073709551615);
+    
+        int *A = (int *)malloc(18446744073709551615);
   ### Cấp phát động
   - Malloc/Calloc: trả về con trỏ void (void*) nên cần ép kiểu dữ liệu trả về
   - Realloc: thay đổi kích thước ô nhớ
-  
-    VD: uint8_t *ptr = (uint8_t *)malloc(5); -> Malloc tạo 5 ô nhớ mỗi ô nhớ 1 byte
+
+    VD:
+    
+      uint8_t *ptr = (uint8_t *)malloc(5);
+      -> Malloc tạo 5 ô nhớ mỗi ô nhớ 1 byte
 
   Tổng quát:
   - Malloc: uint8_t * ptr = (uint8_t *)malloc(5 * sizeof(uint8_t));
@@ -150,15 +159,24 @@
     + Chỉ có thể gọi nội bộ trong hàm khởi tạo nó
     + Mỗi lần gọi giá trị của nó sẽ bằng giá trị gần nhất hàm được gọi
     + Static cục bộ thường dùng cho hàm có tham số trả về là địa chỉ
-   VD:
+   
+  VD:
+   
       int* ptr(){
+      
         int a = 10;
-        return &a; //error
+        
+        return &a; // ERROR
+        
       }
     ->  Do a được khai báo nằm trên vùng Stack thoát khỏi hàm sẽ bị thu hồi địa chỉ
+    
       int* ptr(){
+      
         static int a = 10;
-        return &a;
+        
+        return &a; // OK
+        
       }
     -> Do a được khai báo Static nên khi thoát ra khỏi hàm thì vẫn tônd tại -> trả về địa chỉ của a
   - Toàn cục:
