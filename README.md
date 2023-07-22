@@ -187,6 +187,10 @@
   ### 2. Extern
   - Dùng để lấy hàm/biến có sẵn của các File khác cùng 1 Folder để sử dụng trừ STATIC
   - Có thể khai báo toàn cục hay cục bộ đều được
+
+  -> Dùng lệnh gcc filename1.c filename2.c -o filename3 để tạo filename3 từ filename1.c và filename2.c
+
+  -> Để chạy filename3 dùng lệnh ./filename3
   ### 3. Volatile
   - Trong lập trình nhúng (Embedded System), ta rất thường hay gặp khai báo biến với từ khóa volatile
   - Việc khai báo biến volatile là rất cần thiết để tránh những lỗi sai khó phát hiện do tính năng optimization của compiler
@@ -226,6 +230,8 @@
     + Giai đoạn liên kết (Linker)
   ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/e920ad72-a979-450c-8353-243055c88ce5)
 
+  ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/5354cfc4-a723-434e-b080-bf5669424864)
+
   ### 1. Giai đoạn tiền xử lý (Pre-processor)
   Giai đoạn này sẽ thực hiện:
   - Nhận mã nguồn
@@ -259,12 +265,16 @@
 
   -> Để chạy file code C trên Terminal dùng lệnh gcc -o filename filename.c để tạo ra file thực thi, sau đó dùng lệnh ./filename để chạy file thực thi
 
-  
+  ## B7:
+
+
+
+
+
+
+
+
 # LÝ THUYẾT C++ PROGRAMMING LANGUAGE
-
-
-
-
 # LÝ THUYẾT EMBEDDED
 
 
