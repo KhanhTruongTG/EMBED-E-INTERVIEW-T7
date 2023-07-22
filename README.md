@@ -265,7 +265,7 @@
 
   -> Để chạy file code C trên Terminal dùng lệnh gcc -o filename filename.c để tạo ra file thực thi, sau đó dùng lệnh ./filename để chạy file thực thi
 
-  ## B7:
+  ## B7: MACRO - FUNCTION - INLINE
 
 
 
