@@ -123,7 +123,7 @@
     + Stack: bởi vì bộ nhớ Stack cố định nên nếu chương trình bạn sử dụng quá nhiều bộ nhớ vượt quá khả năng lưu trữ của Stack chắc chắn sẽ xảy ra tình trạng tràn bộ nhớ Stack (Stack overflow), các trường hợp xảy ra như bạn khởi tạo quá nhiều biến cục bộ, hàm đệ quy vô hạn,...
     
     VD: Tràn bộ nhớ Stack với hàm đệ quy vô hạn:
-    int foo(x){
+    int foo(int x){
     return foo(x);
     }
     + Heap: Nếu bạn liên tục cấp phát vùng nhớ mà không giải phóng thì sẽ bị lỗi tràn vùng nhớ Heap (Heap overflow), nếu bạn khởi tạo một vùng nhớ quá lớn mà vùng nhớ Heap không thể lưu trữ một lần được sẽ bị lỗi khởi tạo vùng nhớ Heap thất bại
@@ -142,7 +142,31 @@
   - Thay đổi kích thước ô nhớ Realloc: ptr = (uint8_t *)realloc(ptr, 7 * sizeof(uint8_t));
   - Giải phóng: free(ptr);
   ## B4: VARIABLE
-
+  ### Static
+  Được lưu ở Data/BSS
+  - Cục bộ:
+    + Khi 1 biến được khai báo Static thì sẽ chỉ khởi tạo 1 lần duy nhất và tồn tại suổt thời gian chạy chương trình
+    + Giá trị không bị mất đi khi kết thúc chương trình mà chỉ bị thu hồi bởi Data/BSS
+    + Chỉ có thể gọi nội bộ trong hàm khởi tạo nó
+    + Mỗi lần gọi giá trị của nó sẽ bằng giá trị gần nhất hàm được gọi
+    + Static cục bộ thường dùng cho hàm có tham số trả về là địa chỉ
+   VD:
+      int* ptr(){
+        int a = 10;
+        return &a; //error
+      }
+    ->  Do a được khai báo nằm trên vùng Stack thoát khỏi hàm sẽ bị thu hồi địa chỉ
+      int* ptr(){
+        static int a = 10;
+        return &a;
+      }
+    -> Do a được khai báo Static nên khi thoát ra khỏi hàm thì vẫn tônd tại -> trả về địa chỉ của a
+  - Toàn cục:
+    + Chỉ được sử dụng trong File chứa nó, KHÔNG CÓ CÁCH NÀO LẤY ĐƯỢC để sử dụng cho chương trình khác chung Folder
+    + Static toàn cục thường sử dụng để xây dựng thư viện để người dùng không thay đổi được tránh bị sai lệch
+  ### Extern
+  - Dùng để lấy hàm/biến có sẵn của các File khác cùng 1 Folder để sử dụng trừ STATIC
+  - Có thể khai báo toàn cục hay cục bộ đều được
 
 
 
