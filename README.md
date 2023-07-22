@@ -162,18 +162,22 @@
       }
     -> Do a được khai báo Static nên khi thoát ra khỏi hàm thì vẫn tônd tại -> trả về địa chỉ của a
   - Toàn cục:
-    + Chỉ được sử dụng trong File chứa nó, KHÔNG CÓ CÁCH NÀO LẤY ĐƯỢC để sử dụng cho chương trình khác chung Folder
+    + Chỉ được truy cập và sử dụng trong File chứa nó, KHÔNG CÓ CÁCH NÀO LẤY ĐƯỢC để sử dụng cho chương trình khác chung Folder
     + Static toàn cục thường sử dụng để xây dựng thư viện để người dùng không thay đổi được tránh bị sai lệch
   ### Extern
   - Dùng để lấy hàm/biến có sẵn của các File khác cùng 1 Folder để sử dụng trừ STATIC
   - Có thể khai báo toàn cục hay cục bộ đều được
+  ### Volatile
+  - Trong lập trình nhúng (Embedded System), ta rất thường hay gặp khai báo biến với từ khóa volatile
+  - Việc khai báo biến volatile là rất cần thiết để tránh những lỗi sai khó phát hiện do tính năng optimization của compiler
+  ### Register
+  - Dùng để lưu Data, thông tin giống như RAM nhưng bộ nhớ ít hơn RAM, tốc độ nhanh hơn RAM do chỉ giao tiếp với ALU
 
-
-
-
-
-
+   ALU <- Register <- RAM (1)
   
+   (2) ALU -> Register -> RAM
+  
+  => Giải thích: bắt đầu từ (1), 1 biến được khai báo sẽ lưu trên RAM -> RAM gửi thông tin về Register -> Register gửi thông tin về ALU -> ALU thực hiện thuật toán -> (2) ALU trả về Register -> Register trả về và lưu giá trị trên RAM 
   ## B5: STRUCT & UNION
   ## B6: COMPILER
   
