@@ -1,4 +1,4 @@
-# LÝ THUYẾT C PROGRAMMING LANGUAGE
+# LÝ THUYẾT C PROGRAMMING LANGUAGE #
   ## B1: C BASIC
   ### 1. Biến
     - Embedded sẽ sử dụng thư viện #include <stdint.h>
