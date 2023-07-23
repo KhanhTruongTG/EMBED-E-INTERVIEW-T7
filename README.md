@@ -20,7 +20,7 @@
 ### 3. Hàm 
   
     - Chương trình có tính lặp đi lặp lại sẽ được định nghĩa thành 1 hàm
-    - Note: trừ 'void' thì tất cả các kiểu dữ liệu khác đều phải trả về giá trị (return + giá trị)
+    - Note: trừ 'Void' thì tất cả các kiểu dữ liệu khác đều phải trả về giá trị (return + giá trị)
     - VD: 
       int tong(int a, int b){
         return a+b;
@@ -294,6 +294,7 @@
     + Giai đoạn dịch NNBC sang Assembly (Compiler)
     + Giai đoạn dịch Assembly sang ngôn ngữ máy (Assember)
     + Giai đoạn liên kết (Linker)
+  
   ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/e920ad72-a979-450c-8353-243055c88ce5)
 
   ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/5354cfc4-a723-434e-b080-bf5669424864)
@@ -341,8 +342,17 @@
 
 <details> <summary> B7: MACRO - FUNCTION - INLINE </summary>
 
+### MACRO
 
+  - Marco là 1 tên bất kì (do lập trình viên đặt tên) trỏ tới 1 khối lệnh thực hiện một chức năng nào đó
+  - Trong quá trình tiền xử lí (pre-processor), các Macro được sử dụng trong chương trình được thay thế bởi các khối câu lệnh tương ứng
+  - Định nghĩa macro bằng lệnh `#define`
+  - VD:
 
+    `#define SUM(a,b) a+b`-> Preprocessor khi gặp bất kỳ lời gọi **SUM(a, b)** nào thì thay ngay bằng **a+b**
+
+  => Macro định nghĩa cái gì thì sẽ thay thế cái đó trong quá trình tiền xử lý
+  
 </details>
 
 <details> <summary> B8: THAO TÁC BIT </summary>
