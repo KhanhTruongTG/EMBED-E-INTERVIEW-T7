@@ -260,8 +260,8 @@
 </details>
 
 <details> <summary> B5: STRUCT & UNION </summary>
-
-  ***Struct** & **Union** là kiểu dữ liệu do người dùng tự định nghĩa*
+  
+***Struct** & **Union** là kiểu dữ liệu do người dùng tự định nghĩa*
   
 ### 1. Struct
 
