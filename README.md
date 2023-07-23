@@ -238,9 +238,9 @@
   - Dùng để lấy hàm/biến có sẵn của các File khác cùng 1 Folder để sử dụng trừ STATIC
   - Có thể khai báo toàn cục hay cục bộ đều được
 
-  -> Dùng lệnh gcc filename1.c filename2.c -o filename3 để tạo filename3 từ filename1.c và filename2.c
+  -> Dùng lệnh `gcc filename1.c filename2.c -o filename3` để tạo filename3 từ filename1.c và filename2.c
 
-  -> Để chạy filename3 dùng lệnh ./filename3
+  -> Để chạy filename3 dùng lệnh `./filename3`
 
 ### 3. Volatile
 
@@ -305,9 +305,9 @@
   - Xóa bỏ tất cả chú thích, comments của chương trình
   - Chỉ thị tiền xử lý (bắt đầu bằng #) cũng được xử lý
   
-    -> Sau khi qua tiền xử lý thì file code sẽ có dạng .i
+    -> Sau khi qua tiền xử lý thì file code sẽ có dạng `.i`
 
-    -> Dùng lệnh gcc -E filename.c -o filename.i hoặc gcc -E filename.i để xem lại code sau quá trình tiền xử lý
+    -> Dùng lệnh `gcc -E filename.c -o filename.i` hoặc `gcc -E filename.i` để xem lại code sau quá trình tiền xử lý
     
   VD: Chỉ thị #include cho phép ghép thêm mã chương trình của một tệp tiêu để vào mã nguồn cần dịch. Các hằng số được định nghĩa bằng #define sẽ được thay thế bằng giá trị cụ thể tại mỗi nơi sử dụng trong chương trình
 
@@ -316,26 +316,26 @@
   - Phân tích cú pháp (syntax) của mã nguồn NNBC
   - Chuyển chúng sang dạng mã Assembly là một ngôn ngữ bậc thấp (hợp ngữ) gần với tập lệnh của bộ vi xử lý
 
-    -> Quá trình biên dịch code .i thành ngôn ngữ Assembly .s
+    -> Quá trình biên dịch code `.i` thành ngôn ngữ Assembly `.s`
 
-    -> Dùng lệnh gcc -S -o filename.i filename.s để xem lại code sau quá trình biên dịch
+    -> Dùng lệnh `gcc -S -o filename.i filename.s` để xem lại code sau quá trình biên dịch
 
 ### 3. Giai đoạn dịch Assembly sang ngôn ngữ máy (Assember)
   
   - Dich chương trình => Sang mã máy 0 và 1
-  - Một tệp mã máy (Object) (.o) hoặc (.obj) sinh ra trong hệ thống sau đó
-    -> Dùng lệnh gcc -c filename.c -o filename.o để tạo ra file .o và dùng lệnh objdump -d -Mintel filename.o để xem code
+  - Một tệp mã máy (Object) `.o` hoặc `.obj` sinh ra trong hệ thống sau đó
+    -> Dùng lệnh `gcc -c filename.c -o filename.o` để tạo ra file `.o` và dùng lệnh `objdump -d -Mintel filename.o` để xem code
 
 ### 4. Giai đoạn liên kết (Linker)
   
-  - Trong giai đoạn này mã máy của một chương trình dịch từ nhiều nguồn (file .c hoặc file thư viện .lib) được liên kết lại với nhau để tạo thành chương trình đích duy nhất
+  - Trong giai đoạn này mã máy của một chương trình dịch từ nhiều nguồn (file `.c` hoặc file thư viện `.lib`) được liên kết lại với nhau để tạo thành chương trình đích duy nhất
   - Mã máy của các hàm thư viện gọi trong chương trình cũng được đưa vào chương trình cuối trong giai đoạn này
   - Chính vì vậy mà các lỗi liên quan đến việc gọi hàm hay sử dụng biến tổng thể mà không tồn tại sẽ bị phát hiện. Kể cả lỗi viết chương trình chính không có hàm main() cũng được phát hiện trong liên kết
-  - Kết thúc quá trình tất cả các đối tượng được liên kết lại với nhau thành một chương trình có thể thực thi được (executable hay .exe) thống nhất
+  - Kết thúc quá trình tất cả các đối tượng được liên kết lại với nhau thành một chương trình có thể thực thi được (`Executable` hay `.exe`) thống nhất
 
-  -> File sau khi gộp lại sẽ có đuôi mở rộng Executable hoặc .exe trên Window, còn trên MacOS hay Linux có thể đuôi theo chỉ định hoặc không có đuôi mở rộng
+  -> File sau khi gộp lại sẽ có đuôi mở rộng `Executable` hoặc `.exe` trên Window, còn trên MacOS hay Linux có thể đuôi theo chỉ định hoặc không có đuôi mở rộng
 
-  -> Để chạy file code C trên Terminal dùng lệnh gcc -o filename filename.c để tạo ra file thực thi, sau đó dùng lệnh ./filename để chạy file thực thi
+  -> Để chạy file code C trên Terminal dùng lệnh `gcc -o filename filename.c` để tạo ra file thực thi, sau đó dùng lệnh `./filename` để chạy file thực thi
 
 </details>
 
