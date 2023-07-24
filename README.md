@@ -349,7 +349,7 @@
   - Định nghĩa macro bằng lệnh `#define`
   - VD:
 
-    `#define SUM(a,b) a+b`-> Preprocessor khi gặp bất kỳ lời gọi **SUM(a, b)** nào thì thay ngay bằng **a+b**
+    `#define SUM(a,b) a+b`-> Preprocessor khi gặp bất kỳ lời gọi `SUM(a, b)` nào thì thay ngay bằng `a+b`
 
   => Macro định nghĩa cái gì thì sẽ thay thế cái đó trong quá trình tiền xử lý
   
