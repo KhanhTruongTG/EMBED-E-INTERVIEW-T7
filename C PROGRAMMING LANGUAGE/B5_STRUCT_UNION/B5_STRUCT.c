@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 typedef struct{
-    uint8_t  x[13];
+    uint8_t x[13];
     uint16_t y[15];
     uint32_t z[10];
     uint64_t k[3];      
