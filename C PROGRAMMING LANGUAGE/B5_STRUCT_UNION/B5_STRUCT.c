@@ -32,4 +32,4 @@ int main(){
                     quét 1 8 byte (1 ô nhớ)
                     quét 2 8 byte (1 ô nhớ)
                     quét 3 8 byte (1 ô nhớ)
-=> Tổng số byte của Struct = tổng byte các lần quét cộng lại 14*8 = 112 byte */
+=> Kích thước bộ nhớ của Struct = tổng byte các lần quét cộng lại 14*8 = 112 byte */
