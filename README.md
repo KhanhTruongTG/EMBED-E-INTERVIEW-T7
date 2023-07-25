@@ -319,7 +319,7 @@
 
     -> Quá trình biên dịch code `.i` thành ngôn ngữ Assembly `.s`
 
-    -> Dùng lệnh `gcc -S -o filename.i filename.s` để xem lại code sau quá trình biên dịch
+    -> Dùng lệnh `gcc filename.i -S -o filename.s` để xem lại code sau quá trình biên dịch
 
 ### 3. Giai đoạn dịch Assembly sang ngôn ngữ máy (Assember)
   
