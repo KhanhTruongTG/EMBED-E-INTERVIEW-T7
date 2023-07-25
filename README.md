@@ -259,7 +259,7 @@
 
 </details>
 
-<details> <summary> B5: STRUCT & UNION </summary>
+<details> <summary> B5: STRUCT - UNION </summary>
   
 ***Struct** & **Union** là kiểu dữ liệu do người dùng tự định nghĩa*
   
@@ -355,7 +355,7 @@
   
 </details>
 
-<details> <summary> B8: THAO TÁC BIT </summary>
+<details> <summary> B8: BIT MANIPULATION </summary>
 
 
 </details>
