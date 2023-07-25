@@ -8,7 +8,8 @@ int foo(int x){
 }
 int main()
 {
-  
+  //VD tran bo nhơ Heap
+  int *A = (int *)malloc(18446744073709551615);
   
   return 0;
 }
