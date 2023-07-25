@@ -336,7 +336,7 @@
 
   -> File sau khi gộp lại sẽ có đuôi mở rộng `Executable` hoặc `.exe` trên Window, còn trên MacOS hay Linux có thể đuôi theo chỉ định hoặc không có đuôi mở rộng
 
-  -> Để chạy file code C trên Terminal dùng lệnh `gcc -o filename filename.c` để tạo ra file thực thi, sau đó dùng lệnh `./filename` để chạy file thực thi
+  -> Để chạy file code C trên Terminal dùng lệnh `gcc -o filename filename.c` hoặc 1gcc -o filename.exe filename.c` để tạo ra file thực thi, sau đó dùng lệnh `./filename` để chạy file thực thi
 
 </details>
 
