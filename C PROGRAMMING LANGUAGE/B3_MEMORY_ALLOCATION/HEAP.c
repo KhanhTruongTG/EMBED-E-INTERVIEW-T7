@@ -8,6 +8,6 @@ int main(){
   ptr = (uint8_t *)realloc(ptr, 7 * sizeof(uint8_t));
   free(ptr);
 
-//cấp phát động tạo ra vùng nhớ -> lưu ở phân vùng nhớ Heap
+//cấp phát động tạo ra vùng nhớ -> lưu trong vùng nhớ Heap
   return 0;
 }
