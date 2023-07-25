@@ -23,12 +23,12 @@ void tong(int a, int b){
 struct toaDo{
   uint8_t x;
   uint8_t y;
-};
+}diemM;
 
-typedef struct toaDo{
+typedef struct {
   uint8_t x;
   uint8_t y;
-}diemM;
+}toaDo;
 
 
 int main()
