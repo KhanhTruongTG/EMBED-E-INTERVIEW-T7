@@ -355,8 +355,6 @@
   
 </details>
 
-<details> <summary> B8: BIT MANIPULATION </summary>
-
 
 </details>
 
