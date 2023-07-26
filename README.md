@@ -340,7 +340,7 @@
 
 </details>
 
-<details> <summary> B7: MACRO - FUNCTION - INLINE </summary>
+<details> <summary> B7: MACRO - FUNCTION - INLINE FUNCTION </summary>
 
 ### MACRO
 
@@ -367,7 +367,7 @@
   - Khi Compiler thấy bất kỳ chỗ nào xuất hiện Inline Function, nó sẽ thay thế chỗ đó bởi định nghĩa của hàm đã được compile tương ứng –> Phần được thay thế không phải code mà là đoạn mã đã được compile
   - Được xử lí bởi Compiler
 
-### SO SÁNH MACRO - INLINE FUNCTION - FUNCTION 
+### SO SÁNH MACRO - FUNCTION - INLINE FUNCTION
 | SO SÁNH | MACRO | FUNCTION | INLINE FUNCTION |
 |--------------|-------|------|-------|
 | Tốc độ | nhanh | chậm | nhanh nhưng thông qua compile | 2 x 4 |
