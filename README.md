@@ -347,14 +347,40 @@
   - Marco là 1 tên bất kì (do lập trình viên đặt tên) trỏ tới 1 khối lệnh thực hiện một chức năng nào đó
   - Trong quá trình tiền xử lí (pre-processor), các Macro được sử dụng trong chương trình được thay thế bởi các khối câu lệnh tương ứng
   - Định nghĩa macro bằng lệnh `#define`
+  - Được xử lí bởi Preprocessor 
   - VD:
 
     `#define SUM(a,b) a+b`-> Preprocessor khi gặp bất kỳ lời gọi `SUM(a, b)` nào thì thay ngay bằng `a+b`
 
   => Macro định nghĩa cái gì thì sẽ thay thế cái đó trong quá trình tiền xử lý
-  
-</details>
 
+### FUCTION
+
+  - Function là một đoạn chương trình có tên, đầu vào và đầu ra. Hàm có chức năng giải quyết một số vấn đề chuyên biệt cho chương trình chính. Hàm được gọi nhiều lần với các tham số khác nhau
+       
+      + Program counter: bộ đếm lấy giá trị và đọc giá trị đó (chỉ đếm và đọc giá trị) 
+      + Stack pointer: bộ nhớ để lưu địa chỉ 
+  - Đầu tiên chương trình sẽ chạy các lệnh một cách tuần tự từ địa chỉ (Program counter sẽ đếm từ địa chỉ) -> Khi thấy hàm được gọi -> Compiler sẽ phải lưu con trỏ chương trình PC hiện tại vào Stack (Stack Pointer) -> chuyển chương trình PC tới hàm được gọi, thực hiện hàm đó xong và lấy kết quả trả về -> sau đó quay lại vị trí ban đầu trong Stack trước khi gọi hàm và tiếp tục thực hiện chương trình
+  - Các này khiến chương trình tốn thời gian hơn là chỉ cần thay thế đoạn code đã được Compile
+
+  - **Inline Function**, được khai báo với từ khóa `Inline`
+  - Khi Compiler thấy bất kỳ chỗ nào xuất hiện Inline Function, nó sẽ thay thế chỗ đó bởi định nghĩa của hàm đã được compile tương ứng –> Phần được thay thế không phải code mà là đoạn mã đã được compile
+  - Được xử lí bởi Compiler
+
+### SO SÁNH MACRO - FUNCTION - INLINE FUNCTION
+| SO SÁNH | MACRO | FUNCTION | INLINE FUNCTION |
+|--------------|-------|------|-------|
+| Tốc độ | nhanh | chậm | nhanh nhưng thông qua compile | 2 x 4 |
+| Kích thước chương trình| lớn | nhỏ | lớn | 3 x 4 |
+
+  - Macro đơn giản là chỉ thay thế đoạn code macro vào chỗ được gọi trước khi được biên dịch
+  - Inline Function thay thế đoạn mã code đã được biên dịch vào chỗ được gọi
+  - Function bình thường phải tạo một Function call, lưu địa chỉ trước khi gọi hàm vào stack sau đó mới thực hiện hàm và sau cùng là quay trở về địa chỉ trên stack trước khi gọi hàm và thực hiện tiếp chương trình
+  - Macro khiến kích thước bộ nhớ chương trình lớn nhưng thời gian chạy nhanh -> tốc độ nhanh, kích thước lớn
+  - Inline Function khiến kích thước bộ nhớ chương trình lớn, tuy nhiên nó làm giảm thời gian chạy chương trình -> tốc độ nhanh, kích thước lớn
+  - Function bình thường sẽ phải gọi Function call nên tốn thời gian hơn Inline Function nhưng kích thước chương trình nhỏ -> tốc độ sẽ chậm, kích thước nhỏ
+
+</details>
 
 </details>
 
