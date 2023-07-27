@@ -361,8 +361,8 @@
        
       + Program counter: bộ đếm lấy giá trị và đọc giá trị đó (chỉ đếm và đọc giá trị) 
       + Stack pointer: bộ nhớ để lưu địa chỉ 
-  - Đầu tiên chương trình sẽ chạy các lệnh một cách tuần tự từ địa chỉ (Program counter sẽ đếm từ địa chỉ) -> Khi thấy hàm được gọi -> Compiler sẽ phải lưu con trỏ chương trình PC hiện tại vào Stack (Stack Pointer) -> chuyển chương trình PC tới hàm được gọi, thực hiện hàm đó xong và lấy kết quả trả về -> sau đó quay lại vị trí ban đầu trong Stack trước khi gọi hàm và tiếp tục thực hiện chương trình
-  - Các này khiến chương trình tốn thời gian hơn là chỉ cần thay thế đoạn code đã được Compile
+  - Đầu tiên chương trình sẽ chạy các lệnh một cách tuần tự từ địa chỉ (Program counter sẽ đếm từ địa chỉ) -> Khi thấy hàm được gọi -> Compiler sẽ phải lưu địa chỉ sau hiện tại (địa chỉ trước hàm được gọi) vào Stack (Stack Pointer) -> chuyển Program counter tới hàm được gọi, thực hiện hàm đó xong và lấy kết quả trả về -> sau đó quay lại vị trí đã lưu trong Stack poiter trước khi gọi hàm và tiếp tục thực hiện chương trình
+  - Điều này khiến chương trình tốn thời gian hơn là chỉ cần thay thế đoạn code đã được Compile (tức là Inline Function)
 
   - **Inline Function** được khai báo với từ khóa `Inline`
   - Khi Compiler thấy bất kỳ chỗ nào xuất hiện Inline Function, nó sẽ thay thế chỗ đó bởi định nghĩa của hàm đã được compile tương ứng –> Phần được thay thế không phải code mà là đoạn mã đã được compile
