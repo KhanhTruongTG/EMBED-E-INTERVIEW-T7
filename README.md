@@ -42,7 +42,7 @@
         return 0;
       }
       
-### 5. Câu điều kiện
+### 5. Vòng lặp / Câu điều kiện
  
     - for(khởi tạo; điều kiện; thuật toán)
     - if, else if, else
