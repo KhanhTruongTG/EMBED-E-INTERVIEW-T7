@@ -2,7 +2,7 @@
 
 <details> <summary> B1: C BASIC </summary> 
   
-### 1. Biến
+### 1. Kiểu dữ liệu
     
     - Embedded sẽ sử dụng thư viện #include <stdint.h>
       
