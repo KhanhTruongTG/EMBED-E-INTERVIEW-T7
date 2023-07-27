@@ -159,6 +159,7 @@
   - *Đặc điểm vùng nhớ*
     + **Stack**: Vùng nhớ Stack được quản lý bởi hệ điều hành, dữ liệu được lưu trong Stack sẽ tự động hủy khi hàm thực hiện xong công việc của mình
     + **Heap**: Vùng nhớ Heap được quản lý bởi lập trình viên (trong C hoặc C++), dữ liệu trong Heap sẽ không bị hủy khi hàm thực hiện xong, điều đó có nghĩa bạn phải tự tay hủy vùng nhớ bằng câu lệnh free (trong C), và delete hoặc delete [] (trong C++), nếu không sẽ xảy ra hiện tượng rò rỉ bộ nhớ
+  
   NOTE: Việc tự động dọn vùng nhớ còn tùy thuộc vào trình biên dịch trung gian
 
   - *Vấn đề lỗi xảy ra đối với vùng nhớ*
@@ -228,7 +229,7 @@
         return &a; // OK
         
       }
-    -> Do a được khai báo Static nên khi thoát ra khỏi hàm thì vẫn tônd tại -> trả về địa chỉ của a
+    -> Do a được khai báo Static nên khi thoát ra khỏi hàm thì vẫn tồn tại -> trả về địa chỉ của a
   - Toàn cục:
     + Chỉ được truy cập và sử dụng trong File chứa nó, KHÔNG CÓ CÁCH NÀO LẤY ĐƯỢC để sử dụng cho chương trình khác chung Folder
     + Static toàn cục thường sử dụng để xây dựng thư viện để người dùng không thay đổi được tránh bị sai lệch
