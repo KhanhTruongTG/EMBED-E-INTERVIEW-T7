@@ -4,7 +4,7 @@
 void tong (int a, int b){
     printf("tong a va b: %d\n",a+b);
 }                                            //VD hàm này có địa chỉ từ 0xC1 đến 0xC9
-                                             //Stack Pointer  0x04                  Program Couter                                            
+                                             //2 phần quan trọng của 1 chưởng trình       Stack Pointer             Program Couter                                            
 
 int main()
 {
