@@ -408,13 +408,14 @@ px = &y;   // ERROR vì cố tình chuyển đổi địa chỉ trỏ của con 
   - Đặc điểm của con trỏ này là nó chỉ có thể trỏ đến 1 địa chỉ duy nhất và sau đó không thể thay đổi địa chỉ trỏ được nữa
   - Khác với **con trỏ hằng** thì hằng con trỏ **có thể đọc ghi giá trị vùng nhớ thông qua chính bản thân con trỏ đó**
 
-### CONST TRONG FUNCTION - BONUS PHÂN VÙNG NHỚ
+### CONST TRONG FUNCTION - HIỂU THÊM VỀ PHÂN VÙNG NHỚ
 ```sh
 void test(){
   const int a = 10;    //tất cả các biến khai báo cục bộ đều được lưu ở phân vùng Stack
 }
 ```
-**=> Các biến khai báo liên quan đến các phân vùng nhớ Text, Data, BSS thì khai báo toàn cục mới có hiệu lực**
+***=> Các biến khai báo liên quan đến các phân vùng nhớ Text, Data, BSS thì khai báo toàn cục mới có hiệu lực***
+***=> Tất cả các biến khai báo cục bộ đều được lưu ở phân vùng Stack***
 
 ```sh
 int arr[3] = {1, 3, 5};
