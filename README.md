@@ -424,7 +424,7 @@ int arr[3] = {1, 3, 5};
 void string(const int arr[]){      //không muốn thay đổi giá trị arr, chỉ được phép đọc
 }
 ```
-**=> Khi ta KHÔNG muốn thay đổi giá trị của biến toàn cục/ biến cục bộ/ biến input thì ta sử dụng Const**
+***=> Khi ta KHÔNG muốn thay đổi giá trị của biến toàn cục/ biến cục bộ/ biến input thì ta sử dụng Const***
 
 </details>
 
