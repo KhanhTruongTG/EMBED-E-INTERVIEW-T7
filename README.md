@@ -415,7 +415,9 @@ void test(){
 }
 ```
 ***=> Các biến khai báo liên quan đến các phân vùng nhớ Text, Data, BSS thì khai báo toàn cục mới có hiệu lực***
+
 ***=> Tất cả các biến khai báo cục bộ đều được lưu ở phân vùng Stack***
+
 
 ```sh
 int arr[3] = {1, 3, 5};
