@@ -383,7 +383,7 @@
 
 </details>
 
-<details> <summary> BONUS </summary>
+<details> <summary> EXTRA KNOWLEDGE </summary>
 
   
 </details>
