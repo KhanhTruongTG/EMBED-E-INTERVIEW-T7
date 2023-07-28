@@ -115,7 +115,7 @@
   
   Trên RAM có 5 phân vùng bộ nhớ: Text, Data, BSS, Heap, Stack
 
-### 1. Text </summary>
+### 1. Text
 
   - Quyền truy cập chỉ Read và nó chứa lệnh để thực thi nên tránh sửa đổi instruction
   - Chứa khai báo hằng số trong chương trình (.rodata)
@@ -359,7 +359,7 @@
 
   - Function là một đoạn chương trình có tên, đầu vào và đầu ra. Hàm có chức năng giải quyết một số vấn đề chuyên biệt cho chương trình chính. Hàm được gọi nhiều lần với các tham số khác nhau
        
-      + Program counter: bộ đếm lấy giá trị và đọc giá trị đó (chỉ đếm và đọc giá trị) 
+      + Program counter: bộ đếm lấy giá trị và đọc giá trị đó (chỉ đếm và đọc giá trị). NOTE: bước nhảy phụ phuộc vào kiến trúc vi xử lí
       + Stack pointer: bộ nhớ để lưu địa chỉ 
   - Đầu tiên chương trình sẽ chạy các lệnh một cách tuần tự từ địa chỉ (Program counter sẽ đếm từ địa chỉ) -> Khi thấy hàm được gọi -> Compiler sẽ phải lưu địa chỉ sau hiện tại (địa chỉ trước hàm được gọi) vào Stack (Stack Pointer) -> chuyển Program counter tới hàm được gọi, thực hiện hàm đó xong và lấy kết quả trả về -> sau đó quay lại vị trí đã lưu trong Stack poiter trước khi gọi hàm và tiếp tục thực hiện chương trình
   - Điều này khiến chương trình tốn thời gian hơn là chỉ cần thay thế đoạn code đã được Compile (tức là Inline Function)
@@ -377,15 +377,52 @@
   - Macro đơn giản là chỉ thay thế đoạn code macro vào chỗ được gọi trước khi được biên dịch
   - Inline Function thay thế đoạn mã code đã được biên dịch vào chỗ được gọi
   - Function bình thường phải tạo một Function call, lưu địa chỉ trước khi gọi hàm vào stack sau đó mới thực hiện hàm và sau cùng là quay trở về địa chỉ trên stack trước khi gọi hàm và thực hiện tiếp chương trình
-  - Macro khiến kích thước bộ nhớ chương trình lớn nhưng thời gian chạy nhanh -> tốc độ nhanh, kích thước lớn
+  - Macro khiến kích thước bộ nhớ chương trình lớn nhưng thời gian chạy nhanh -> tốc độ nhanh, kích thước lớn (code dài hơn -> file dài hơn)
   - Inline Function khiến kích thước bộ nhớ chương trình lớn, tuy nhiên nó làm giảm thời gian chạy chương trình -> tốc độ nhanh, kích thước lớn
-  - Function bình thường sẽ phải gọi Function call nên tốn thời gian hơn Inline Function nhưng kích thước chương trình nhỏ -> tốc độ sẽ chậm, kích thước nhỏ
+  - Function bình thường sẽ phải gọi Function call nên tốn thời gian hơn Inline Function nhưng kích thước chương trình nhỏ -> tốc độ sẽ chậm, kích thước nhỏ (code ngắn hơn -> file ngắn hơn)
 
 </details>
 
 <details> <summary> EXTRA KNOWLEDGE </summary>
 
-  
+### CON TRỎ HẰNG
+```sh
+int x = 10, y = 20;
+const int *px = &x;
+*px = 15;  // ERROR do cố ghi lại giá trị cho vùng nhớ qua con trỏ hằng
+px = &y;   // OK
+x = 15;    // OK
+```
+  - Khi ta khai báo 1 con trỏ có thêm từ khóa const phía trước như trên. Ta hiểu rằng con trỏ px là 1 con trỏ hằng
+  - Con trỏ hằng là con trỏ có thể trỏ đến 1 vùng nhớ hằng
+  - Đặc điểm của con trỏ này là nó là con trỏ chỉ đọc (read-only), người dùng có thể thông qua nó đọc giá trị vùng nhớ mà nó trỏ đến nhưng **không thể thông qua nó ghi lại giá trị vào vùng nhớ đó**
+
+### HẰNG CON TRỎ
+```sh
+int x = 10, y = 20;
+int* const px = &x;
+*px = 15;  // OK
+px = &y;   // ERROR vì cố tình chuyển đổi địa chỉ trỏ của con trỏ
+```
+  - Khi khai báo như trên là hiểu con trỏ px là 1 hằng con trỏ
+  - Đặc điểm của con trỏ này là nó chỉ có thể trỏ đến 1 địa chỉ duy nhất và sau đó không thể thay đổi địa chỉ trỏ được nữa
+  - Khác với **con trỏ hằng** thì hằng con trỏ **có thể đọc ghi giá trị vùng nhớ thông qua chính bản thân con trỏ đó**
+
+### CONST TRONG FUNCTION - BONUS PHÂN VÙNG NHỚ
+```sh
+void test(){
+  const int a = 10;    //tất cả các biến khai báo cục bộ đều được lưu ở phân vùng Stack
+}
+```
+**=> Các biến khai báo liên quan đến các phân vùng nhớ Text, Data, BSS thì khai báo toàn cục mới có hiệu lực**
+
+```sh
+int arr[3] = {1, 3, 5};
+void string(const int arr[]){      //không muốn thay đổi giá trị arr, chỉ được phép đọc
+}
+```
+**=> Khi ta KHÔNG muốn thay đổi giá trị của biến toàn cục/ biến cục bộ/ biến input thì ta sử dụng Const**
+
 </details>
 
 </details>
