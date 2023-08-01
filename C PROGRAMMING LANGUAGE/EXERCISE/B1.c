@@ -31,6 +31,7 @@ int main(){
         token = strtok(NULL, " ");      //tách từ cuối kí tự đầu
     }
     int mangDem[MAX]={0};               //tạo 1 mảng để lưu số lần xuất hiện
+    
     //chạy vòng for duyệt qua các phần tử của mảng
     for(int i = 0; i < n; i++){
         if(mangDem[i] == 0){
