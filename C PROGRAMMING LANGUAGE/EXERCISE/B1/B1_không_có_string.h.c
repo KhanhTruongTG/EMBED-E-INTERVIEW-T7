@@ -61,7 +61,7 @@ words* splitString(char string[]){
             *string = '\0';                 //xóa dấu cách
             count = 1;                      //reset count
             string++;                       //lấy địa chỉ sau dấu cách
-            arrtemp[++index].ptr = string;  //arrtemp[1].ptr= địa chỉ h
+            arrtemp[++index].ptr = string;  //gán địa chỉ kế tiếp vào chuỗi
         }
         else{
             count++;                        //tăng độ dài
