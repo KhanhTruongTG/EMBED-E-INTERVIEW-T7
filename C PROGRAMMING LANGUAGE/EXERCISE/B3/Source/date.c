@@ -4,7 +4,7 @@ const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "F
 
 //const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};         //lưu các tên thứ trong tuần cách 2
 
-int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};                                          //lưu số ngày trong tháng
+int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};                                                 //lưu số ngày trong tháng
 
 //điều kiện năm nhuần
 int leapYear(uint16_t year){
