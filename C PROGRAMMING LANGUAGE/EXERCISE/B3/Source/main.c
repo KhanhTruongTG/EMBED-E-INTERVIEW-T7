@@ -5,7 +5,6 @@ extern const char *days[];
 
 int main(){
     int day, month, year;
-    int dayWeek = getDayOfWeek(day, month, year);
 
     printf("Enter day: ");
     scanf("%d", &day);
@@ -20,7 +19,8 @@ int main(){
         printf("The entered date is not valid.\n");
         return 1;
     }
-    
+
+    int dayWeek = getDayOfWeek(day, month, year);
     printf("The date %d/%d/%d falls on a %s.\n", day, month, year, days[dayWeek]);
     return 0;
 }
