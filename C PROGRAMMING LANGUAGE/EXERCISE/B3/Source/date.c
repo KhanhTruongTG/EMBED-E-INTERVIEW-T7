@@ -1,8 +1,10 @@
 #include "date.h"
 
-const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};    //lưu các tên thứ trong tuần
+const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};                    //lưu các tên thứ trong tuần cách 1
 
-int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};                                //lưu số ngày trong tháng
+//const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};         //lưu các tên thứ trong tuần cách 2
+
+int daysInMonth[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};                                          //lưu số ngày trong tháng
 
 //điều kiện năm nhuần
 int leapYear(uint16_t year){
@@ -33,6 +35,7 @@ bool validDate(int day, int month, int year){
 //các ngày trong tuần
 int dayOfWeek(int day, int month, int year){
 
+    //công thức chọn thứ cách 1
     if (leapYear(year)){
         daysInMonth[2] = 29;
     }
@@ -44,6 +47,16 @@ int dayOfWeek(int day, int month, int year){
     totalDays += day;
                
     int daysOfWeek = (totalDays + (year - 1) + (year - 1)/4 - (year - 1)/100 + (year - 1)/400) % 7;
-
     return daysOfWeek;
+
+    /* //công thức chọn thứ cách 2
+    if (leapYear(year)){
+        daysInMonth[2] = 29;
+        int daysOfWeek = (day + 2*month + year + (3*(month + 1))/5 + (year/4)) % 7;
+        daysOfWeek += 2;
+        return daysOfWeek;
+    }
+
+    int daysOfWeek = (day + 2*month + year + (3*(month + 1))/5 + (year/4)) % 7;        
+    return daysOfWeek; */
 }
