@@ -1,6 +1,6 @@
 #include "date.h"
 
-const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};                    //lưu các tên thứ trong tuần cách 1
+const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};                     //lưu các tên thứ trong tuần cách 1
 
 //const char *days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};         //lưu các tên thứ trong tuần cách 2
 
