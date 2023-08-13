@@ -20,7 +20,7 @@ int main(){
         return 1;
     }
 
-    int dayWeek = getDayOfWeek(day, month, year);
+    int dayWeek = dayOfWeek(day, month, year);
     printf("The date %d/%d/%d falls on a %s.\n", day, month, year, days[dayWeek]);
     return 0;
 }
