@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-typedef enum{
+/* typedef enum{
     MONDAY,
     TUESDAY,
     WEDNESDAY,
@@ -12,7 +12,7 @@ typedef enum{
     FRIDAY,
     SATURDAY,
     SUNDAY
-}Week;
+}Week; */
 
 typedef enum{
     JANUARY,
