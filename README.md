@@ -480,14 +480,21 @@ Class là một mô tả trừu tượng (abstract) của nhóm các đối tư�
 using namespace std;
 class Person {
     public:
-        string firstName; // property
-        string lastName;  // property
-        int age;          // property
+        string firstName;       // property
+        string lastName;        // property
+        int age;                // property
 
-        void fullname() { // method
+        void fullname() {       // method
             cout << firstName << ' ' << lastName;
         }
 };
+int main(){
+  Person person;
+  person.firstName = "Khanh";
+  person.lastName = "Truong";
+  person.fullname();             // sẽ in ra màn hình là "Khanh Truong"
+  return 0;
+}
 ```
 
 
