@@ -1,6 +1,6 @@
 # LÝ THUYẾT C PROGRAMMING LANGUAGE
 
-<details> <summary> B1: C BASIC </summary> 
+<details> <summary> C BASIC </summary> 
   
 ### 1. Kiểu dữ liệu
     
@@ -60,7 +60,7 @@
   
 </details>    
 
-<details> <summary> B2: POINTER </summary> 
+<details> <summary> POINTER </summary> 
 
 ### 1. Pointer
       
@@ -109,7 +109,7 @@
 
 </details> 
 
-<details> <summary> B3: MEMORY ALLOCATION </summary>
+<details> <summary> MEMORY ALLOCATION </summary>
 
   ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/75fdc9f2-d420-4b01-92d4-ec2f3204be74)
   
@@ -199,7 +199,7 @@
 
 </details> 
 
-<details> <summary> B4: VARIABLE </summary>
+<details> <summary> VARIABLE </summary>
 
 ### 1. Static
 
@@ -260,7 +260,7 @@
 
 </details>
 
-<details> <summary> B5: STRUCT - UNION </summary>
+<details> <summary> STRUCT - UNION </summary>
   
 ***Struct** & **Union** là kiểu dữ liệu do người dùng tự định nghĩa*
   
@@ -285,7 +285,7 @@
 
 </details>
 
-<details> <summary> B6: COMPILER </summary>
+<details> <summary> COMPILER </summary>
 
   - Quy trình biên dịch là quá trình chuyển đổi từ ngôn ngữ bậc cao (NNBC) (C/C++, Pascal, Java, C#…) sang ngôn ngữ đích (ngôn ngữ máy) để máy tính có thể hiểu và thực thi 
   - Ngôn ngữ lập trình C là một ngôn ngữ dạng biên dịch
@@ -341,7 +341,7 @@
 
 </details>
 
-<details> <summary> B7: MACRO - FUNCTION - INLINE FUNCTION </summary>
+<details> <summary> MACRO - FUNCTION - INLINE FUNCTION </summary>
 
 ### MACRO
 
@@ -430,13 +430,69 @@ void string(const int arr[]){      //không muốn thay đổi giá trị arr, c
 
 # LÝ THUYẾT C++ PROGRAMMING LANGUAGE
 
+<details> <summary> C++ BASIC </summary>
+
+***C++** cũng tương tự như **C**, cũng có các lệnh cơ bản như C, `include` thư viện để sử dụng các hàm, cũng có các kiểu dữ liệu tương tự như C,...*
+  - VD1:
+```sh
+#include <iostream>
+using namespace std;
+
+int main(){
+  cout<<"HELLO\n";
+  return 0;
+}
+```
+  - VD2:
+```sh
+#include <iostream>
+using namespace std;
+
+int main(){
+  int key = 0;
+  cout<<"nhap key: ";
+  cin>>key;
+  cout<<"key = "<<key<<endl;
+  return 0;
+}
+```
+
+</details>
+
 <details> <summary> CLASS </summary>
+
+*Class là kiểu dữ liệu cho người dùng tự định nghĩa tương tự như Struct, Union, Enum*
+
+Class là một mô tả trừu tượng (abstract) của nhóm các đối tượng (object) có cùng bản chất, ngược lại mỗi một đối tượng là một thể hiện cụ thể (instance) cho những mô tả trừu tượng đó. Một Class trong C++ sẽ có các đặc điểm sau:
+  - Một Class bao gồm các thành phần dữ liệu (thuộc tính hay **property**) và các phương thức (hàm thành phần hay **method**)
+  - Từ khóa Class sẽ chỉ điểm bắt đầu của một Class sẽ được cài đặt.
+```sh
+  VD: Một class đơn giản: Class Car
+    - Một chiếc xe hơi vậy thì sẽ có chung những đặc điểm là đều có vô lăng, có bánh xe nhiều hơn 3, có động cơ... -> một Class
+    - Một model hay mẫu mà người ta đã quy định là nếu đúng như vậy thì nó là xe hơi
+    - Nhưng mà xe thì có thể có nhiều hãng khác nhau, BMW, Vinfast, Toyota... Thì mỗi hãng xe lại có những model xe khác nhau nhưng chúng đều là xe hơi
+    - Vậy thì trong lập trình cũng vậy, Class là quy định ra một mẫu, một model mà các thể hiện của nó (instance) hay đối tượng (object) phải tuân theo
+```
+  - VD:
+```sh
+#include <iostream>
+#include <string>
+using namespace std;
+class Person {
+    public:
+        string firstName; // property
+        string lastName;  // property
+        int age;          // property
+
+        void fullname() { // method
+            cout << firstName << ' ' << lastName;
+        }
+};
+```
 
 
 
 </details>
-
-
 
 
 
