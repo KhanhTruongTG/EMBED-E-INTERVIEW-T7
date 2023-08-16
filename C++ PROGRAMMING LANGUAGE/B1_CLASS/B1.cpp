@@ -36,7 +36,7 @@ void display(SinhVien sv){
 
 
 int main(){
-    SinhVien sv1("Khanh", 2000, "CLC2B");                           //SinhVien là instance, sv1 là object
+    SinhVien sv1("Khanh", 2000, "CLC2B");                           //Class SinhVien, object sv1 
 
     /* sv1.MSSV = 1000;
     sv1.TEN = "Khanh";
