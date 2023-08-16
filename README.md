@@ -428,11 +428,10 @@ void string(const int arr[]){      //không muốn thay đổi giá trị arr, c
 
 </details>
 
-</details>
-
-
 # LÝ THUYẾT C++ PROGRAMMING LANGUAGE
+
 <details> <summary> CLASS </summary>
+
 
 
 </details>
