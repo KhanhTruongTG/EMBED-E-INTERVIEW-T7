@@ -432,6 +432,24 @@ void string(const int arr[]){      //không muốn thay đổi giá trị arr, c
 
 
 # LÝ THUYẾT C++ PROGRAMMING LANGUAGE
+<details> <summary> CLASS </summary>
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 # LÝ THUYẾT EMBEDDED
 
 
