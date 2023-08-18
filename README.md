@@ -369,6 +369,7 @@
   - Được xử lí bởi Compiler
 
 ### SO SÁNH MACRO - FUNCTION - INLINE FUNCTION
+
 | SO SÁNH | MACRO | FUNCTION | INLINE FUNCTION |
 |--------------|-------|------|-------|
 | Tốc độ | nhanh | chậm | nhanh nhưng thông qua compile | 2 x 4 |
@@ -386,6 +387,7 @@
 <details> <summary> EXTRA KNOWLEDGE </summary>
 
 ### CON TRỎ HẰNG
+
 ```sh
 int x = 10, y = 20;
 const int *px = &x;
@@ -398,6 +400,7 @@ x = 15;    // OK
   - Đặc điểm của con trỏ này là nó là con trỏ chỉ đọc (read-only), người dùng có thể thông qua nó đọc giá trị vùng nhớ mà nó trỏ đến nhưng **không thể thông qua nó ghi lại giá trị vào vùng nhớ đó**
 
 ### HẰNG CON TRỎ
+
 ```sh
 int x = 10, y = 20;
 int* const px = &x;
@@ -409,6 +412,7 @@ px = &y;   // ERROR vì cố tình chuyển đổi địa chỉ trỏ của con 
   - Khác với **con trỏ hằng** thì hằng con trỏ **có thể đọc ghi giá trị vùng nhớ thông qua chính bản thân con trỏ đó**
 
 ### CONST TRONG FUNCTION - HIỂU THÊM VỀ PHÂN VÙNG NHỚ
+
 ```sh
 void test(){
   const int a = 10;    //tất cả các biến khai báo cục bộ đều được lưu ở phân vùng Stack
@@ -462,6 +466,7 @@ int main(){
 <details> <summary> CLASS </summary>
 
 ### CLASS
+
 Class là kiểu dữ liệu cho người dùng tự định nghĩa tương tự như Struct, Union, Enum
 
 Class là một mô tả trừu tượng (abstract) của nhóm các đối tượng (object) có cùng bản chất, ngược lại mỗi một đối tượng là một thể hiện cụ thể (instance) cho những mô tả trừu tượng đó. Một Class trong C++ sẽ có các đặc điểm sau:
