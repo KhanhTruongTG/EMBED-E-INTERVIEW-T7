@@ -528,7 +528,7 @@ void Animal::makeNoise(){
   cout << sound;
 }
 ```
-  **Constructor** hay hàm dựng là một hàm đặc biệt, nó sẽ được gọi ngay khi chúng ta khởi tạo một object
+  **Constructor** (hàm tạo) là một hàm đặc biệt, nó sẽ được gọi ngay khi chúng ta khởi tạo một object
   VD:
 ```sh
 class Person{
@@ -547,7 +547,7 @@ class Person{
     }
 };
 ```
-  **Destructor** việc được quản lý bộ nhớ một cách hoàn toàn do người lập trình làm chủ thì destructor là vô cùng cần thiết
+  **Destructor** (hàm hủy) việc được quản lý bộ nhớ một cách hoàn toàn do người lập trình làm chủ thì destructor là vô cùng cần thiết
   - Trong số thuộc tính của class bạn định nghĩa có một con trỏ, mảng động...nếu không sử dụng desctructor thì sẽ xảy ra chuyện rò rỉ bộ nhớ. Với destructor bạn có thể xóa con trỏ đi khi object được thu hồi hoặc bạn có thể gọi tường minh destructor
   VD:
 ```sh
