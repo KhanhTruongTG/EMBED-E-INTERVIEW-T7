@@ -599,7 +599,7 @@ class MyClass{
       + public class cha sẽ là private class con
       + protected class cha sẽ là private class con
       + private không kế thừa được
-      -> Khi class con (1) kế thừa theo kiểu private thì class con của class con (1) sẽ không kế thừa được các property hay method của class con (1)
+      -> Khi class con (1) kế thừa class cha theo kiểu private thì class con của class con (1) sẽ không kế thừa được các property hay method của class con (1)
 ```
   **Polymorphism (Tính đa hình)** là một khả năng mà một method trong class có thể đưa ra các kết quả hoàn toàn khác nhau, tùy thuộc vào dữ liệu được xử lý. Tức các method có cùng tên nhưng các dữ liệu input khác nhau sẽ đưa ra các kết quả khác nhau
 
