@@ -573,7 +573,12 @@ class MyClass{
   - *Đối với function*, sau khi thực hiện xong khối lệnh và thoát thì static variable vẫn sẽ không mất đi
   - *Đối với class*, static member sẽ là thuộc tính dùng chung cho tất cả các đối tượng của class đó, cho dù là không có đối tượng nào tồn tại. Tức là có thể khai báo nhiều object, mỗi object các thuộc tính của nó đều khác nhau nhưng riêng static thì **chỉ có một** và static member tồn tại trong suốt chương trình cho dù có hay không có object nào của nó hay nói ngắn gọn là dùng chung một biến static
 
-  **Feature of object oriented programming (OOP)** là đặc tính của lập trình hướng đối tượng
+</details>
+
+<details> <summary> FEATURE OF OBJECT ORIENTED PROGRAMMING (OOP) </summary>
+
+### FEATURE OF OBJECT ORIENTED PROGRAMMING (OOP)
+  OOP: là đặc tính của lập trình hướng đối tượng
   
   Có 4 đặc tính quan trọng của lập trình hướng đối tượng trong C++ cần nắm:
   - Inheritance (Tính kế thừa)
@@ -581,7 +586,9 @@ class MyClass{
   - Abstraction (Tính trừu tượng)
   - Encapsulation (Tính đóng gói)
 
-  **Inheritance (Tính kế thừa )** một class có thể kế thừa các thuộc tính của một class khác đã tồn tại trước đó
+### Inheritance (Tính kế thừa)
+  
+  Tính kế thừa: một class có thể kế thừa các thuộc tính của một class khác đã tồn tại trước đó
   
   Khi một class con được tạo ra bởi việc kế thừa thuộc tính của class cha thì chúng ta sẽ gọi class con đó là *subclass* trong C++ và class cha chính là *superclass* trong C++
 ```sh
@@ -601,13 +608,19 @@ class MyClass{
       + private không kế thừa được
       -> Khi class con (1) kế thừa class cha theo kiểu private thì class con của class con (1) sẽ không kế thừa được các property hay method của class con (1)
 ```
-  **Polymorphism (Tính đa hình)** là một khả năng mà một method trong class có thể đưa ra các kết quả hoàn toàn khác nhau, tùy thuộc vào dữ liệu được xử lý. Tức các method có cùng tên nhưng các dữ liệu input khác nhau sẽ đưa ra các kết quả khác nhau
+### Polymorphism (Tính đa hình)
+  
+  Tính đa hình: là một khả năng mà một method trong class có thể đưa ra các kết quả hoàn toàn khác nhau, tùy thuộc vào dữ liệu được xử lý. Tức các method có cùng tên nhưng các dữ liệu input khác nhau sẽ đưa ra các kết quả khác nhau
 
-  **Abstraction (Tính trừu tượng)** là một khả năng mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông tin cần xử lý. Tức có thể xử lý một đối tượng bằng cách gọi tên một phương thức và trả về kết quả xử lý, mà không cần biết đối tượng đó đã được các thao tác như nào trong class
+### Abstraction (Tính trừu tượng)
+  
+  Tính trừu tượng: là một khả năng mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông tin cần xử lý. Tức có thể xử lý một đối tượng bằng cách gọi tên một phương thức và trả về kết quả xử lý, mà không cần biết đối tượng đó đã được các thao tác như nào trong class
 
   VD: Có thể nấu cơm bằng nồi cơm điện bằng cách rất đơn giản là ấn công tắc nấu, mà không cần biết là bên trong cái nồi cơm điện đó đã làm thế nào mà gạo có thể nấu thành cơm
   
-  **Encapsulation (Tính đóng gói)** là khả năng không cho object truy cập trực tiếp đến property, nếu muốn truy cập đến property thì phải thông qua method, tránh trường hợp xử lí bị sai dữ liệu, nên sẽ đảm bảo tính toàn vẹn của object, cũng như giúp giấu đi các dữ liệu, thông tin cần được che giấu
+### Encapsulation (Tính đóng gói)
+
+  Tính đóng gói: là khả năng không cho object truy cập trực tiếp đến property, nếu muốn truy cập đến property thì phải thông qua method, tránh trường hợp xử lí bị sai dữ liệu, nên sẽ đảm bảo tính toàn vẹn của object, cũng như giúp giấu đi các dữ liệu, thông tin cần được che giấu
 
   VD: Khi bạn dùng một cái Iphone, bạn không thể thay đổi các cấu trúc bên trong của hệ điều hành IOS, mà chỉ có Apple mới có thể làm được điều này
 
