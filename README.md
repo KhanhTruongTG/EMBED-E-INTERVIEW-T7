@@ -632,6 +632,7 @@ class MyClass{
 
 - Giống như là mảng (array), vector trong C++ là một đối tượng dùng để chứa các đối tượng khác, và các đối tượng được chứa này cũng được lưu trữ một cách liên tiếp trong vector
 - Tuy nhiên, nếu như số lượng phần tử (size) của một mảng là cố định, thì ở vector, nó hoàn toàn có thể thay đổi trong suốt quá trình làm việc của chương trình
+- **Array lưu ở Stack, Vector lưu ở Heap**
 - Syntax: `vector <kiểu dữ liệu> ten-vector`
 
 ### Modifiers
@@ -664,10 +665,6 @@ class MyClass{
 
   **9. clear()**
   - `clear()`: Hàm được sử dụng để loại bỏ tất cả các phần tử của vùng chứa vector
-
-
-
-
 
 </details>
 
