@@ -6,11 +6,11 @@ using namespace std;
 //truyền vector vào hàm
 void test(vector<int> v){
     v[0] = 10;
-}                                       //không thay đổi được do chỉ truyền tham số
+}                                       //không thay đổi được
 
 void test1(vector<int> &v){
     v[0] = 10;
-}                                       //thay đổi được giá trị vì truyền tham trị 
+}                                       //thay đổi được giá trị vì truyền địa chỉ
 
 vector<int> test2(){
     vector<int> v = {5, 8, 7};
