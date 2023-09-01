@@ -668,10 +668,65 @@ class MyClass{
 
 </details>
 
+<details> <summary> TEMPLATE </summary>
+
+  - **Template** là một kiểu dữ liệu trừu tượng tổng quát cho các kiểu dữ liệu int, float, double, bool...
+  - Có 2 loại đó là Function template & Class template
+  - Template giúp người lập trình định nghĩa tổng quát cho Function và Class thay vì phải nạp chồng (overloading) cho từng hàm hay phương thức với những kiểu dữ liệu khác nhau
+```sh
+#include <iostream>
+template <typename var1, typename var2>
+var1 tong(var1 a, var2 b){
+  return var1(a+b);
+}
+int main(){
+    printf("tong a va b la %f\n", tong(3,5.6));
+    //var 1 sẽ có kiểu dữ liệu là int, var2 có kiểu dữ liệu là double
+    //tong trả về kiểu var1 nên sẽ có kiểu dữ liệu là int
+    return 0;
+}
+```
+
+</details>
+
+<details> <summary> NAMESPACE </summary>
+
+  - **Namespace** được sử dụng để định nghĩa một phạm vi nhằm mục đích phân biệt các hàm, lớp, biến, ... cùng tên trong các thư viện khác nhau
+```sh
+  - VD:
+  + File A, include file thư viện B và file thư viện C
+  + File B và C có cũng 1 function và có cùng input nhưng các function đó xử lí khác nhau
+  + Khi file A `using namespace B` và `using namespace C` -> gọi function (giống nhau đó) -> báo lỗi => do file A không hiểu đang gọi function của `namespace` nào
+```
+```sh
+  - VD:
+#include <iostream>
+using namespace std;
+using namespace ConOngA;
+namespace ConOngA{
+  int Teo=10;
+}
+namespace ConOngB{
+    int Teo=20;
+}
+int main(){
+    cout << Teo << endl;            //cách gọi khi using namespace ConOngA
+    //dòng này sẽ bị lỗi nếu sử dụng cả 2 using namespace ConOngA và using namespace ConOngB
+    //-> vì nó không hiểu đang gọi Teo trong namespace nào
+
+    cout << ConOngB::Teo << endl;   //cách gọi thủ công
+    return 0;
+}
+```
+
+</details>
+
+<details> <summary> VIRTUAL FUNCTION </summary>
 
 
 
 
+</details>
 
 
 
