@@ -1,4 +1,4 @@
-//có tham khảo một số hàm còn thiếu của các bạn trong lớp
+//có tham khảo một số hàm còn thiếu của bạn trong lớp
 #include<iostream>
 #include<vector>
 #include<string>
