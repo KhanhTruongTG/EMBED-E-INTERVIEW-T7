@@ -1,3 +1,10 @@
+/*
+*File: ABS.cpp
+*Author: Truong Huu Khanh
+*Date: 7/9/2023
+*Description: ABS system for car
+*/
+
 #include <iostream>
 using namespace std;
 
