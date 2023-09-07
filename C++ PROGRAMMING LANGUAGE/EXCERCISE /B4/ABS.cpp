@@ -86,7 +86,6 @@ void ABS::Adjust(){
     cout << "Điều chỉnh phanh về " << brake_force << "\n";
 }
 
-
 int main(){
     Car car;
     ABS abs(car);
