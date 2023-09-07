@@ -12,7 +12,7 @@ class GPSPoint{
         void input();
         bool isValid();
         double toRadians(double degrees);
-        double distanceTo(const GPSPoint& otherPoint);
+        double distanceTo(const GPSPoint& point);
 };
 
 void GPSPoint::input(){
@@ -56,6 +56,6 @@ int main(){
     cout << "Nhập tọa độ điểm thứ hai:\n";
     point2.input();
     double distance = point1.distanceTo(point2);
-    cout << "Khoảng cách giữa hai GPS trên trái đất: " << distance << " km" << endl;
+    cout << "Khoảng cách giữa hai GPS: " << distance << " km" << endl;
     return 0;
 }
