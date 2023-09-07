@@ -1,3 +1,10 @@
+/*
+*File: GPS.cpp
+*Author: Truong Huu Khanh
+*Date: 7/9/2023
+*Description: Distance between two GPS
+*/
+
 #include <iostream>
 #include <math.h>
 #define EARTH_RADIUS 6371.0
