@@ -805,15 +805,27 @@ int main(){
 
 <details> <summary> LAMBDA </summary>
 
+  **Lambda**là function nhưng được viết ở cục bộ (viết ở hàm main) thay vì khai báo ở toàn cục
 
-
+  Syntax: `[danh sách các biến ngoài lambda](parameter list) -> kiểu trả về { các câu lệnh mà lambda sẽ thực thi}`
+  
+  VD:
+```sh
+#include <iostream>
+int main(){
+  int x = 20;
+  auto tong = [x](int a, int b){
+    printf("tong: %d\n", a+b);
+    printf("x = %d\n, x);
+  };
+  tong(7, 9);
+  return 0;
+}
+```
 
 </details>
 
 
-
-
-  
 # LÝ THUYẾT EMBEDDED
 
 
