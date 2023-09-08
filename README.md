@@ -432,6 +432,7 @@ void string(const int arr[]){      //không muốn thay đổi giá trị arr, c
 
 </details>
 
+
 # LÝ THUYẾT C++ PROGRAMMING LANGUAGE
 
 <details> <summary> C++ BASIC </summary>
@@ -762,7 +763,36 @@ int main(){
 
 </details>
 
+<details> <summary> LINKED LIST </summary>
 
+  **Linked list** là một cấu trúc dữ liệu động, nó là một danh sách mà mỗi phần tử đều liên kết với phần tử đúng sau nó trong danh sách. Mỗi phần tử (được gọi là một node hay nút) trong danh sách liên kết đơn là một cấu trúc có hai thành phần:
+  - Thành phần dữ liệu: lưu thông tin về bản thân phần tử đó
+  - Thành phần liên kết: lưu địa chỉ phần tử đứng sau trong danh sách, nếu phần tử đó là phần tử cuối cùng thì thành phần này bằng NULL
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/83ad49ea-1e20-4234-8987-d6467667ddaf)
+
+  Do danh sách liên kết đơn là một cấu trúc dữ liệu động, được tạo nên nhờ việc cấp phát động nên nó mang một số đặc điểm sau đây:
+  - Được cấp phát bộ nhớ khi chạy chương trình
+  - Có thể đổi thay kích thước qua việc thêm, xóa phần tử
+  - Kích thước tối đa phụ thuộc vào bộ nhớ khả dụng của RAM
+  - Các phần tử được lưu trữ tự nhiên (không liên tiếp) trong RAM
+
+  Do tính liên kết của phần tử đầu và phần tử đứng sau nó trong danh sách liên kết đơn, nó có những đặc điểm sau:
+  - Chỉ cần nắm được phần tử đầu và cuối là có thể quản lý được danh sách
+  - Truy cập tới phần tử ngẫu nhiên phải duyệt từ đầu tới vị trí đó
+  - Chỉ có thể tìm kiếm tuyến tính một phần tử
+
+</details>
+
+<details> <summary> MAP </summary>
+
+
+
+</details>
+
+<details> <summary> LAMBDA </summary>
+
+</details>
 
 
 
