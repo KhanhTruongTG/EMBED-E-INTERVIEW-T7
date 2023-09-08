@@ -786,7 +786,20 @@ int main(){
 
 <details> <summary> MAP </summary>
 
-
+  **Map** là một tập hợp các phần tử được sắp xếp theo thứ tự cụ thể, mà mỗi phần tử trong đó được hình thành bởi sự kết hợp của một cặp khóa và giá trị (key & value) với mỗi khóa là duy nhất trong map
+  - Các `key` được sử dụng để sắp xếp và xác định `value` tương ứng được liên kết với nó
+  - Mỗi `key` trong map là duy nhất và không được phép trùng lặp
+  - Các `value` trong map thì có thể trùng lặp, chúng có thể thay đổi giá trị, cũng như là được chèn hoặc xóa khỏi map
+  - Để sử dụng map bạn cần khai báo: `#include<map>`
+  - Syntax: `map <kiểu dữ liệu, kiểu dữ liệu> tên biến;`
+```sh
+  Trả về kích thước hiện tại của map: m.size();
+  Kiểm tra map có rỗng hoặc không: m.empty();     // trả về true nếu map rỗng, false nếu không rỗng
+  Truy cập phần tử trong map: m[x];               // truy cập value của khóa x
+  Chỉnh sửa phần tử trong map (phần tử chỉnh sửa phải ở dạng "cặp"): m.insert(x);
+  Xóa phần tử trong map: m.erase(x);
+  Xóa tất cả phần tử trong map: m.clear();
+```
 
 </details>
 
