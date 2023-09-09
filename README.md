@@ -805,7 +805,7 @@ int main(){
 
 <details> <summary> LAMBDA </summary>
 
-  **Lambda**là function nhưng được viết ở cục bộ (viết ở hàm main) thay vì khai báo ở toàn cục
+  **Lambda** là function nhưng được viết ở cục bộ (viết ở hàm main) thay vì khai báo ở toàn cục
 
   Syntax: `[danh sách các biến ngoài lambda](parameter list) -> kiểu trả về { các câu lệnh mà lambda sẽ thực thi}`
   
