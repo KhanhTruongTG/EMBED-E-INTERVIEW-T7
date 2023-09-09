@@ -1,4 +1,4 @@
-# LÝ THUYẾT C PROGRAMMING LANGUAGE
+## C PROGRAMMING LANGUAGE
 
 <details> <summary> C BASIC </summary> 
   
@@ -433,7 +433,7 @@ void string(const int arr[]){      //không muốn thay đổi giá trị arr, c
 </details>
 
 
-# LÝ THUYẾT C++ PROGRAMMING LANGUAGE
+## C++ PROGRAMMING LANGUAGE
 
 <details> <summary> C++ BASIC </summary>
 
@@ -826,7 +826,7 @@ int main(){
 </details>
 
 
-# LÝ THUYẾT EMBEDDED
+## EMBEDDED
 
 
 
