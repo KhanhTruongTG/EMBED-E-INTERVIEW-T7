@@ -142,8 +142,8 @@ class DCMotorController{
 }; */
 
 int main(){
-    DCMotor dcMotor(13.0, 1.5, 0.0); 
-    FeedbackSystem feedback(dcMotor);
+    DCMotor Motor(13.0, 1.5, 0.0); 
+    FeedbackSystem feedback(Motor);
     feedback.controllMotor(1.0, 1.4, 50.0); 
     return 0;
 }
