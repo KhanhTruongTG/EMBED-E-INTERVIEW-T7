@@ -95,7 +95,7 @@ void FeedbackSystem::controllMotor(double current, double maxCurrent, double tem
     checkOverheat(temperature);
 }
 
-/* add vào cảm biến
+/* code add khi có cảm biến
 const double MAX_TEMPERATURE = 100.0;
 
 class DCMotorController{
