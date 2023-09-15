@@ -885,11 +885,13 @@ int main(){
   + CPHA = 0: đưa data vào trước, sau đó dùng xung clock để đẩy data đi
 
 #### Ưu và nhược điểm của giao thức SPI
+
 **Ưu điểm**
 - Tốc độ truyền thông cao
 - Giao tiếp đồng bộ
 - Khả năng truyền thông hai chiều:  SPI cho phép truyền dữ liệu theo hai chiều, từ master tới slave và từ slave về master, như truyền thông với các cảm biến hoặc thiết bị ngoại vi
 - Hỗ trợ nhiều thiết bị slave: SPI cho phép kết nối nhiều thiết bị slave với một master duy nhất. Master có thể chọn từng slave để truyền dữ liệu, giúp mở rộng khả năng kết nối và giao tiếp với nhiều thiết bị
+- 
 **Nhược điểm**
 - Số lượng chân kết nối nhiều hơn các giao thức truyền thông khác như I2C
 - Độ dài cáp bị giới hạn: Để SPI có tương phản cao và đạt được tốc độ truyền thông nhanh thì cần phải có độ dài cáp kết nối giữa các thiết bị cần được giới hạn để tránh sự mất mát dữ liệu và nhiễu
