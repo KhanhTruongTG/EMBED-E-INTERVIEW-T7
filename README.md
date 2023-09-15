@@ -828,5 +828,108 @@ int main(){
 
 ## EMBEDDED
 
+<details> <summary> SPI </summary>
+
+**SPI** (Serial Peripheral Interface) là một chuẩn truyền thông giao tiếp tốc độ cao do Motorola đề xuất
+  - Các bit dữ liệu được truyền nối tiếp nhau và có xung clock đồng bộ
+  - Giao tiếp song công, có thể truyền và nhận cùng một thời điểm
+  - Khoảng cách truyền ngắn, được sử dụng để trao đổi dữ liệu với nhau giữa các chip trên cùng một bo mạch
+  - Tốc độ truyền khoảng vài Mb/s
+  - Các dòng vi điều khiển thường được tích hợp module giao tiếp SPI dùng để giao tiếp truyền dữ liệu với các vi điều khiển khác, hoặc giao tiếp với các ngoại vi bên ngoài như cảm biến, EEPROM, ADC, LCD, SD Card,...
+
+#### Các thiết bị giao tiếp qua SPI có quan hệ master - slave
+  - Master là thiết bị điều khiển (thường là vi điều khiển)
+  - Slave (thường là cảm biến, màn hình hoặc chip nhớ) nhận lệnh từ master
+  - Cấu hình đơn giản nhất của SPI là hệ thống một slave, một master duy nhất, nhưng một master có thể điều khiển nhiều hơn một slave
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/95436648-fe6f-4a97-a483-7ab9c40af85c)
+
+***Kết nối trên một SPI bus với một master và một slave***
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/806255d5-77f1-4204-b132-6b261a4a3964)
+
+***Kết nối từng slave độc lập (song song)***
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/feda85a3-4f9d-4bbc-a9ab-e6e4c7a4fc56)
+
+***Kết nối slave theo chuỗi (nối tiếp)***
+
+#### Bus SPI gồm có 4 đường tín hiệu
+  - SCLK: Serial Clock (chân xung clock)
+  - MOSI: Master Out, Slave In (truyền data đi cho slave)
+  - MISO: Master In, Slave Out (nhận data từ slave)
+  - SS: Slave Select (điều khiển để cho phép master điều khiển với slave nào)
+
+#### Chân SS hoạt động
+  - Thường Slave 1,2,3 là những con sensor do nhà sản xuất đã nạp chương trình SPI. Có những case ngoại lệ
+  - Nếu SS1 kéo xuống mức 0 (truyền bit 0) thì nó cho phép SS1 master giao tiếp với slave 1. Nếu SS1 mức 1 thì không đc giao tiếp với slave 1
+  - Nếu muốn master giao tiếp với slave 2, thì SS1 kéo lên mức 1, SS2 kéo xuống mức 0, SS3 kéo lên mức 1. Slave 3 tương tự
+
+#### Các bước truyền dữ liệu SPI
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/263941e2-d3d4-41ee-8426-f4d40c3d8d7a)
+
+<img src="https://arduinokit.vn/wp-content/uploads/2023/05/nguyen-ly-hoat-dong-chuan-giao-tiep-spi.webp">
+
+  - Master ra tín hiệu xung nhịp
+  - Master chuyển chân SS hoặc CS sang trạng thái điện áp thấp, điều này sẽ kích hoạt slave
+  - Master gửi dữ liệu từng bit một tới slave dọc theo đường MOSI. Slave đọc các bit khi nó nhận được
+  - Nếu cần phản hồi, slave sẽ trả lại dữ liệu từng bit một cho master dọc theo đường MISO. Master đọc các bit khi nó nhận được
+
+#### Các chế độ hoạt động
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/a436699a-b1ae-4f46-9c86-1610b93d8477)
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/7f6adc20-f2a3-40d2-9500-e04748e7957f)
+
+  - CPOL dùng để chỉ trạng thái của chân SCK ở trạng ban đầu. Chân SCK giữ ở mức cao khi CPOL=1 hoặc mức thấp khi CPOL=0
+  - CPHA dùng để chỉ các mà dữ liệu được lấy mẫu theo xung. Dữ liệu sẽ được lấy ở cạnh lên của SCK khi CPHA = 0 hoặc cạnh xuống khi CPHA = 1
+  + CPHA = 1: đầu tiên cho 1 xung clock trước, sau đó đưa dữ liệu vào, xung clock tiếp theo sẽ đẩy dữ liệu đi
+  + CPHA = 0: đưa data vào trước, sau đó dùng xung clock để đẩy data đi
+
+#### Ưu và nhược điểm của giao thức SPI
+**Ưu điểm**
+- Tốc độ truyền thông cao
+- Giao tiếp đồng bộ
+- Khả năng truyền thông hai chiều:  SPI cho phép truyền dữ liệu theo hai chiều, từ master tới slave và từ slave về master, như truyền thông với các cảm biến hoặc thiết bị ngoại vi
+- Hỗ trợ nhiều thiết bị slave: SPI cho phép kết nối nhiều thiết bị slave với một master duy nhất. Master có thể chọn từng slave để truyền dữ liệu, giúp mở rộng khả năng kết nối và giao tiếp với nhiều thiết bị
+**Nhược điểm**
+- Số lượng chân kết nối nhiều hơn các giao thức truyền thông khác như I2C
+- Độ dài cáp bị giới hạn: Để SPI có tương phản cao và đạt được tốc độ truyền thông nhanh thì cần phải có độ dài cáp kết nối giữa các thiết bị cần được giới hạn để tránh sự mất mát dữ liệu và nhiễu
+- Không hỗ trợ chia sẻ đường truyền: Điều này có nghĩa là chỉ một slave được truyền dữ liệu tại một thời điểm
+
+</details>
+
+
+
+
+<details> <summary> I2C </summary>
+
+</details>
+
+<details> <summary> UART </summary>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
