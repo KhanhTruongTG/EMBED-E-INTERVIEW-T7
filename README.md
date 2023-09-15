@@ -843,15 +843,12 @@ int main(){
   - Cấu hình đơn giản nhất của SPI là hệ thống một slave, một master duy nhất, nhưng một master có thể điều khiển nhiều hơn một slave
 
 ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/95436648-fe6f-4a97-a483-7ab9c40af85c)
-
 ***Kết nối trên một SPI bus với một master và một slave***
 
 ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/806255d5-77f1-4204-b132-6b261a4a3964)
-
 ***Kết nối từng slave độc lập (song song)***
 
 ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/feda85a3-4f9d-4bbc-a9ab-e6e4c7a4fc56)
-
 ***Kết nối slave theo chuỗi (nối tiếp)***
 
 #### Bus SPI gồm có 4 đường tín hiệu
