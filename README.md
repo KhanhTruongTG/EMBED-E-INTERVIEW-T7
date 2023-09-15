@@ -837,7 +837,7 @@ int main(){
   - Tốc độ truyền khoảng vài Mb/s
   - Các dòng vi điều khiển thường được tích hợp module giao tiếp SPI dùng để giao tiếp truyền dữ liệu với các vi điều khiển khác, hoặc giao tiếp với các ngoại vi bên ngoài như cảm biến, EEPROM, ADC, LCD, SD Card,...
 
-#### Các thiết bị giao tiếp qua SPI có quan hệ master - slave
+#### Các thiết bị giao tiếp qua SPI có quan hệ Master - Slave
   - Master là thiết bị điều khiển (thường là vi điều khiển)
   - Slave (thường là cảm biến, màn hình hoặc chip nhớ) nhận lệnh từ master
   - Cấu hình đơn giản nhất của SPI là hệ thống một slave, một master duy nhất, nhưng một master có thể điều khiển nhiều hơn một slave
