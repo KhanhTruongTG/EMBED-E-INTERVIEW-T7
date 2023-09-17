@@ -899,16 +899,49 @@ int main(){
 
 </details>
 
+<details> <summary> UART </summary>
 
+**UART** là giao thức không đồng bộ, do đó không có đường clock nào điều chỉnh tốc độ truyền dữ liệu. Người dùng phải đặt cả hai thiết bị để giao tiếp ở cùng tốc độ. Tốc độ này được gọi là tốc độ truyền, được biểu thị bằng bit trên giây (bit/s)
 
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/ac1b85e2-db33-4ba2-9aeb-96460086d0ca)
+
+  - Các UART giao tiếp giữa hai nút riêng biệt bằng cách sử dụng một cặp dẫn và một nối đất chung
+  + TX: truyền dữ liệu
+  + RX: nhận dữ liệu
+
+  - Tại 1 thời điểm, UART có thể cùng truyền và nhận dữ liệu
+  - Ở trạng thái không giao tiếp, chân TX luôn ở mức cao (có điện trở kéo lên)
+  - UART là một giao thức một master, một slave. Trong đó một thiết bị được thiết lập để giao tiếp với duy nhất một thiết bị khác
+
+#### Cách truyền, nhận dữ liệu
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/a94bb9eb-0a88-435d-84c3-31f12f9c66f7)
+
+  - Dữ liệu truyền qua UART được tổ chức thành các gói. Mỗi gói chứa 1 bit start, 5 đến 9 bit dữ liệu (tùy thuộc vào UART, đa số là 8 bit), một bit chẵn lẻ tùy chọn và 1 hoặc 2 bit stop (đa số là 1 bit stop)
+  + Start bit: Để bắt đầu truyền dữ liệu, UART truyền sẽ kéo đường truyền từ mức cao xuống mức thấp trong một chu kỳ clock. Khi UART nhận phát hiện sự chuyển đổi điện áp cao xuống thấp (có thể delay nửa 1.5 chu kì cho dữ liệu ổn định), nó bắt đầu đọc các bit trong khung dữ liệu ở tần số của tốc độ truyền
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/95f8dd40-c8bc-4fa3-8aa6-905ca1a9f698)
+
+  + Khung dữ liệu chứa dữ liệu thực tế được chuyển. Nó có thể dài từ 5 bit đến 8 bit nếu sử dụng bit chẵn lẻ. Nếu không sử dụng bit chẵn lẻ, khung dữ liệu có thể dài 9 bit. Trong hầu hết các trường hợp, dữ liệu được gửi với bit ít quan trọng nhất trước tiên (hoặc truyền từ LSB đến MSB)
+  + Stop bit: để báo hiệu sự kết thúc của gói dữ liệu, UART gửi sẽ điều khiển đường truyền dữ liệu từ điện áp thấp đến điện áp cao trong ít nhất khoảng 1 bit (hoặc 2 bit)
+
+**Bit chẵn lẻ**: là một cách để UART nhận cho biết liệu có bất kỳ dữ liệu nào đã thay đổi trong quá trình truyền hay không (bức xạ điện từ, tốc độ truyền không khớp hoặc truyền dữ liệu khoảng cách xa)
+  - Sau khi UART nhận đọc khung dữ liệu, nó sẽ đếm số bit có giá trị là 1 và kiểm tra xem tổng số là số chẵn hay lẻ
+    + Nếu bit chẵn lẻ là 0 (tính chẵn), thì tổng các bit 1 trong khung dữ liệu phải là một số chẵn
+    + Nếu bit chẵn lẻ là 1 (tính lẻ), các bit 1 trong khung dữ liệu sẽ tổng thành một số lẻ
+  - Khi bit chẵn lẻ khớp với dữ liệu, UART sẽ biết rằng quá trình truyền không có lỗi
+  - Nhưng nếu bit chẵn lẻ là 0 và tổng là số lẻ hoặc bit chẵn lẻ là 1 và tổng là số chẵn, UART sẽ biết rằng các bit trong khung dữ liệu đã thay đổi
+
+</details>
 
 <details> <summary> I2C </summary>
 
+
+
+
 </details>
 
-<details> <summary> UART </summary>
 
-</details>
 
 
 
