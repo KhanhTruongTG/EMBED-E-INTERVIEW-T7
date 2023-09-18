@@ -956,7 +956,7 @@ Ghi chú:
 ```
 
   - Master gửi điều kiện khởi động đến mọi Slave được kết nối bằng cách chuyển đường SDA từ mức điện áp cao sang mức điện áp thấp trước khi chuyển đường SCL từ mức cao xuống mức thấp
-  - Master gửi cho mỗi Slave địa chỉ 7 hoặc 10 bit của slave mà nó muốn giao tiếp, cùng với bit đọc/ghi. Khung địa chỉ bao gồm một bit duy nhất ở cuối tin nhắn cho Slave biết Master muốn ghi dữ liệu vào nó hay nhận dữ liệu từ nó
+  - Master gửi cho mỗi Slave địa chỉ 7 hoặc 10 bit của Slave mà nó muốn giao tiếp, cùng với bit đọc/ghi (thường là 7 bit + 1 bit đọc/ghi). Khung địa chỉ bao gồm một bit duy nhất ở cuối tin nhắn cho Slave biết Master muốn ghi dữ liệu vào nó hay nhận dữ liệu từ nó
     + Nếu Master muốn gửi dữ liệu đến Slave, bit đọc/ghi ở mức điện áp thấp
     + Nếu Master đang yêu cầu dữ liệu từ Slave, thì bit đọc/ghi ở mức điện áp cao
   - Mỗi Slave sẽ so sánh địa chỉ được gửi từ master với địa chỉ của chính nó.
