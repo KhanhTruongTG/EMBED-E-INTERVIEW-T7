@@ -918,7 +918,7 @@ int main(){
 ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/a94bb9eb-0a88-435d-84c3-31f12f9c66f7)
 
   - Dữ liệu truyền qua UART được tổ chức thành các gói. Mỗi gói chứa 1 bit start, 5 đến 9 bit dữ liệu (tùy thuộc vào UART, đa số là 8 bit), một bit chẵn lẻ tùy chọn và 1 hoặc 2 bit stop (đa số là 1 bit stop)
-  + Start bit: Để bắt đầu truyền dữ liệu, UART truyền sẽ kéo đường truyền từ mức cao xuống mức thấp trong một chu kỳ clock. Khi UART nhận phát hiện sự chuyển đổi điện áp cao xuống thấp (có thể delay nửa 1.5 chu kì cho dữ liệu ổn định), nó bắt đầu đọc các bit trong khung dữ liệu ở tần số của tốc độ truyền
+  + Start bit: để bắt đầu truyền dữ liệu, UART truyền sẽ kéo đường truyền từ mức cao xuống mức thấp trong một chu kỳ clock. Khi UART nhận phát hiện sự chuyển đổi điện áp cao xuống thấp (có thể delay nửa 1.5 chu kì cho dữ liệu ổn định), nó bắt đầu đọc các bit trong khung dữ liệu ở tần số của tốc độ truyền
 
 ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/95f8dd40-c8bc-4fa3-8aa6-905ca1a9f698)
 
@@ -936,21 +936,47 @@ int main(){
 
 <details> <summary> I2C </summary>
 
+**I2C** (Inter – Integrated Circuit) là 1 giao thức giao tiếp nối tiếp đồng bộ được phát triển bởi Philips Semiconductors, sử dụng để truyền nhận dữ liệu giữa các IC với nhau chỉ sử dụng hai đường truyền tín hiệu
 
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/055ef731-6980-4a46-b8d2-947b2243b6fc)
+
+  - I2C chỉ sử dụng hai dây để truyền dữ liệu giữa các thiết bị:
+    + SDA (Serial Data) - đường truyền cho master và slave để gửi và nhận dữ liệu
+    + SCL (Serial Clock) - đường mang tín hiệu xung nhịp
+  - I2C là một giao thức truyền thông nối tiếp, vì vậy dữ liệu được truyền từng bit dọc theo một đường duy nhất (đường SDA)
+  - Khi Master và Slave không giao tiếp với nhau, chân SDA và SCL luôn ở mức cao (có điện trở kéo lên)
+
+#### Các bước truyền dữ liệu
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/33ab07c6-4794-4306-9136-fc3d2563d718)
+
+  - Master gửi điều kiện khởi động đến mọi Slave được kết nối bằng cách chuyển đường SDA từ mức điện áp cao sang mức điện áp thấp trước khi chuyển đường SCL từ mức cao xuống mức thấp
+  - Master gửi cho mỗi Slave địa chỉ 7 hoặc 10 bit của slave mà nó muốn giao tiếp, cùng với bit đọc/ghi. Khung địa chỉ bao gồm một bit duy nhất ở cuối tin nhắn cho Slave biết Master muốn ghi dữ liệu vào nó hay nhận dữ liệu từ nó
+    + Nếu Master muốn gửi dữ liệu đến Slave, bit đọc/ghi ở mức điện áp thấp
+    + Nếu Master đang yêu cầu dữ liệu từ Slave, thì bit đọc/ghi ở mức điện áp cao
+  - Mỗi Slave sẽ so sánh địa chỉ được gửi từ master với địa chỉ của chính nó.
+    + Nếu địa chỉ trùng khớp, Slave sẽ trả về một bit ACK bằng cách kéo dòng SDA xuống thấp cho một bit
+    + Nếu địa chỉ từ Master không khớp với địa chỉ của Slave, Slave rời khỏi đường SDA cao
+  - Master gửi hoặc nhận khung dữ liệu
+  - Sau khi mỗi khung dữ liệu được chuyển, thiết bị nhận trả về một bit ACK khác cho thiết bị gửi để xác nhận đã nhận thành công khung
+  - Để dừng truyền dữ liệu, Master gửi điều kiện dừng đến Slave bằng cách chuyển đổi mức cao SCL trước khi chuyển mức cao SDA
+
+</details>
+
+<details> <summary> INTERRUPT </summary>
 
 
 </details>
 
+<details> <summary> TIMER </summary>
 
 
+</details>
+
+<details> <summary> CAN </summary>
 
 
-
-
-
-
-
-
+</details>
 
 
 
