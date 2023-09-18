@@ -949,6 +949,11 @@ int main(){
 #### Các bước truyền dữ liệu
 
 ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/33ab07c6-4794-4306-9136-fc3d2563d718)
+```sh
+Ghi chú:
+  - Màu xám: Master
+  - Màu trắng: Slave
+```
 
   - Master gửi điều kiện khởi động đến mọi Slave được kết nối bằng cách chuyển đường SDA từ mức điện áp cao sang mức điện áp thấp trước khi chuyển đường SCL từ mức cao xuống mức thấp
   - Master gửi cho mỗi Slave địa chỉ 7 hoặc 10 bit của slave mà nó muốn giao tiếp, cùng với bit đọc/ghi. Khung địa chỉ bao gồm một bit duy nhất ở cuối tin nhắn cho Slave biết Master muốn ghi dữ liệu vào nó hay nhận dữ liệu từ nó
