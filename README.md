@@ -970,6 +970,39 @@ Ghi chú:
 
 <details> <summary> INTERRUPT </summary>
 
+**Interrupt** (ngắt) là đoạn chương trình độc chạy độc lập với chương trình chính, có độ ưu tiên cao, khi xảy ra ngắt nó sẽ chạy hết chương trình ngắt sau đó mới tiếp tục chạy chương trình chính
+  - Hay ngắt là một số sự kiện khẩn cấp bên trong hoặc bên ngoài bộ vi điều khiển xảy ra, buộc vi điều khiển tạm dừng thực hiện chương trình hiện tại, phục vụ ngay lập tức nhiệm vụ mà ngắt yêu cầu – nhiệm vụ này gọi là trình phục vụ ngắt **(ISR: Interrupt Service Routine)**
+  - Khi xảy ra ngắt, con trỏ Program Counter sẽ trỏ đến địa chỉ ngắt
+  - Mỗi vi điều khiển có 1 trình phục vụ ngắt riêng (độ ưu tiên ngắt, địa chỉ phục vụ ngắt, cờ ngắt)
+
+#### Trình phục vụ ngắt
+
+  - Đối với mỗi ngắt thì phải có một trình phục vụ ngắt (ISR) hay trình quản lý ngắt để đưa ra nhiệm vụ cho bộ vi điều khiển khi được gọi ngắt
+  - Khi một hàm ngắt được gọi thì bộ vi điều khiển sẽ chạy trình phục vụ ngắt. Đối với mỗi ngắt thì có một vị trí cố định trong bộ nhớ để giữ địa chỉ ISR của nó. Nhóm vị trí bộ nhớ được dành riêng để lưu giữ địa chỉ của các ISR được gọi là bảng vector ngắt
+
+#### Quy trình khi thực hiện một hàm ngắt
+  
+  Khi kích hoạt một ngắt bộ vi điều khiển thực hiện các bước sau:
+  - Nó hoàn thành lệnh đang thực hiện và lưu địa chỉ của lệnh kế tiếp vào Stack pointer
+  - Nó sẽ trỏ Program counter đến địa chỉ của hàm ngắt(1) để thực hiện tiếp chương trình ngắt sau đó sẽ quay lại địa chỉ đã lưu ở Stack poiter để thực hiện hết chương trình
+    + Nếu trong lúc chạy hàm ngắt(1) thì nó gặp (thêm tác động ngắt khác) hàm ngắt(2) thì nó sẽ so sánh mức độ phục vụ ngắt (ISR) của 2 loại ngắt này
+    + Nếu ngắt(1) > ngắt(2) thì nó sẽ thực hiện xong ngắt(1) tiếp đó sẽ kiểm tra lại xem ngắt(2) còn hay không; nếu ngắt(2) còn thì sẽ thực hiện ngắt(2), sau đó quay lại Stack pointer lấy địa chỉ đã lưu của chương trình chính, trỏ Program counter đến đó thực hiện hết chương trình; nếu ngắt(2) không còn, sau đó quay lại Stack pointer lấy địa chỉ đã lưu chương trình chính, trỏ Program counter đến đó thực hiện hết chương trình
+    + Nếu ngắt(1) < ngắt(2) thì nó sẽ lưu địa chỉ của lệnh kế tiếp trong ngắt(1) vào Stack pointer, sau đó trỏ Program counter đến ngắt(2) thực hiện trước, sau đó quay lại Stack poiter lấy địa chỉ đã lưu của ngắt(1), trỏ Program counter đến đó thực hiện hết ngắt(1), sau đó quay lại Stack poiter lấy địa chỉ đã lưu của chương trình chính, trỏ Program counter đến đó thực hiện hết chương trình
+
+#### Các loại ngắt
+
+  - **Ngắt ngoài**: người dùng có thể tự setup chế độ
+  - Ví dụ: Các chế độ ngắt trong arduino:
+    + LOW: chân digital có mức 0 được giữ liên tục -> xảy ra ngắt
+    + HIGH: chân digital có mức 1 được giữ liên tục -> xảy ra ngắt
+    + RISING: chân digital chỉ cần có xung từ mức 0 lên mức 1 (xung cạnh lên) -> xảy ra ngắt
+    + FALLING: chân digital chỉ cần có xung từ mức 1 xuống mức 0 (xung cạnh xuống)-> xảy ra ngắt
+  - **Ngắt truyên thông**:
+  - Ví dụ: Ngắt truyền thông nối tiếp UART
+    + UART A và UART B có 2 thời điểm truyền, nhận khác nhau. Do khi truyền nhận data có thể bị thiếu hoặc sai
+    + Do đó người ta sử dụng ngắt truyền thông ở UART B: khi chân RX có data thì nó sẽ vào chương trình ngắt để đọc data, đọc xong thì quay lại chương trình chính
+
+![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/8a82150e-8f68-45d3-a6d5-c607879e6330)
 
 </details>
 
