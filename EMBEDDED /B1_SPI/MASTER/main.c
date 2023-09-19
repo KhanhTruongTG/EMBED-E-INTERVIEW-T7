@@ -13,14 +13,11 @@ void delay(int time){
 
 void config(){
 	GPIO_InitTypeDef gpio;
-	
 	RCC_APB2PeriphClockCmd(RCC_APB2ENR_IOPBEN, ENABLE);
-	
 	gpio.GPIO_Pin 	= SCLK | MOSI | SS;
 	gpio.GPIO_Speed = GPIO_Speed_2MHz;
 	gpio.GPIO_Mode  = GPIO_Mode_Out_PP;
 	GPIO_Init(PORTS, &gpio);
-	
 	gpio.GPIO_Pin   = LED;
 	gpio.GPIO_Speed = GPIO_Speed_2MHz;
 	gpio.GPIO_Mode  = GPIO_Mode_Out_PP;
@@ -33,12 +30,11 @@ void spiInit(){
 	GPIO_ResetBits(PORTS, MOSI);
 }
 
-void clockPulse(){                 // Set CPOL : 0   // idle state
-	GPIO_SetBits(PORTS, SS);        // CPHA = 0 : leading edge is rising edge
+void clockPulse(){                 	// Set CPOL : 0   // idle state
+	GPIO_SetBits(PORTS, SS);       	// CPHA = 0 : leading edge is rising edge
 	delay(100000);
 	GPIO_ResetBits(PORTS, SS);
-	delay(100000);
-		
+	delay(100000);	
 }
 
 void transmitData(int inputData){
