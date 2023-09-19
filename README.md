@@ -828,6 +828,11 @@ int main(){
 
 ## EMBEDDED
 
+<details> <summary> THAO TÁC BIT </summary>
+
+
+</details>
+
 <details> <summary> SPI </summary>
 
 **SPI** (Serial Peripheral Interface) là một chuẩn truyền thông giao tiếp tốc độ cao do Motorola đề xuất
@@ -1027,6 +1032,7 @@ Ghi chú:
   /Enable TIM4/
   TIM4_Cmd(ENABLE); //timer sẽ bắt đầu đếm
 ```
+
 </details>
 
 <details> <summary> CAN </summary>
