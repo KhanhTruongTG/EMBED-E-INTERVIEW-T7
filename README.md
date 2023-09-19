@@ -852,12 +852,14 @@ int main(){
 ***Kết nối slave theo chuỗi (nối tiếp)***
 
 #### Bus SPI gồm có 4 đường tín hiệu
+
   - SCLK: Serial Clock (chân xung clock)
   - MOSI: Master Out, Slave In (truyền data đi cho slave)
   - MISO: Master In, Slave Out (nhận data từ slave)
   - SS: Slave Select (điều khiển để cho phép master điều khiển với slave nào)
 
 #### Chân SS hoạt động
+
   - Thường Slave 1,2,3 là những con sensor do nhà sản xuất đã nạp chương trình SPI. Có những case ngoại lệ
   - Nếu SS1 kéo xuống mức 0 (truyền bit 0) thì nó cho phép SS1 master giao tiếp với slave 1. Nếu SS1 mức 1 thì không đc giao tiếp với slave 1
   - Nếu muốn master giao tiếp với slave 2, thì SS1 kéo lên mức 1, SS2 kéo xuống mức 0, SS3 kéo lên mức 1. Slave 3 tương tự
@@ -1008,7 +1010,23 @@ Ghi chú:
 
 <details> <summary> TIMER </summary>
 
+**Bộ đếm/Bộ định thời** là các ngoại vi được thiết kế để thực hiện một nhiệm vụ đơn giản: đếm các xung nhịp. Mỗi khi có thêm một xung nhịp tại đầu vào đếm thì giá trị của bộ đếm sẽ được tăng lên 01 đơn vị (trong chế độ đếm tiến/đếm lên) hay giảm đi 01 đơn vị (trong chế độ đếm lùi/đếm xuống)
+```h
+  /Time base configuration/
+  TIM4_TimeBaseInit(TIM4_PRESCALER_128, 16); //bộ chia, giới hạn bộ đếm
 
+  /Clear TIM4 update flag/
+  TIM4_ClearFlag(TIM4_FLAG_UPDATE); //khi đếm đến giới hạn bộ đếm thì sẽ có cờ tràn (khi tràn -> xảy ra ngắt). Xóa cờ này đi để chắc chắn không tràn
+
+  /Enable update interrupt/
+  TIM4_ITConfig(TIM4_IT_UPDATE, ENABLE); //đăng kí ngắt timer vào bảng vector ngắt
+  
+  /Enable interrupts/
+  enableInterrupts(); //bật các ngắt trong bảng vector
+
+  /Enable TIM4/
+  TIM4_Cmd(ENABLE); //timer sẽ bắt đầu đếm
+```
 </details>
 
 <details> <summary> CAN </summary>
