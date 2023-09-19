@@ -999,7 +999,7 @@ Ghi chú:
     + FALLING: chân digital chỉ cần có xung từ mức 1 xuống mức 0 (xung cạnh xuống)-> xảy ra ngắt
   - **Ngắt truyên thông**:
   - Ví dụ: Ngắt truyền thông nối tiếp UART
-    + UART A và UART B có 2 thời điểm truyền, nhận khác nhau. Do khi truyền nhận data có thể bị thiếu hoặc sai
+    + UART A và UART B có 2 thời điểm truyền, nhận khác nhau. Do đó khi truyền nhận data có thể bị thiếu hoặc sai
     + Do đó người ta sử dụng ngắt truyền thông ở UART B: khi chân RX có data thì nó sẽ vào chương trình ngắt để đọc data, đọc xong thì quay lại chương trình chính
 
 ![image](https://github.com/KhanhTruongTG/EMBEDDED-INTERVIEW-T7/assets/139245069/8a82150e-8f68-45d3-a6d5-c607879e6330)
