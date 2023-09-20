@@ -830,6 +830,45 @@ int main(){
 
 <details> <summary> THAO TÁC BIT </summary>
 
+**1. AND: x=y & z**
+
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/4792bda0-11e7-42ab-be91-24f3913a14cb)
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/d3561b69-3f42-43be-882b-4521d221ab60)
+
+**2. NOT: x=~y**
+
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/171570a9-e47e-426f-b767-936f07b3da5c)
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/bb83e7dd-62e9-42b4-88a4-eacea3ede919)
+
+**3. OR: x=y | z**
+
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/38cba77d-f2be-4fc5-b936-8c19f6652cd0)
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/2bba2c0c-d39c-4349-94a0-59f17229c219)
+
+**4. XOR: x = y ^ z**
+
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/328b53db-f44c-4519-b35b-65275ce82205)
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/62261a3f-24f3-452b-b13d-4322da32269b)
+  
+**5. Dịch Bit: >> (Dịch phải) và << ( Dịch trái )**
+ 
+![image](https://github.com/hunggiao/Embedded-Interview/assets/133474779/2e1f97a1-a4d2-4422-923c-546b76e0d9f7)
+
+  VD: Giả sử có 1 vi điều khiển 8bit (1 lần quét điều khiển được 8 chân)
+  
+  > Thuật toán set mức cao: PORTA=0b00000000
+```
+    PORTA = PORTA |(0b10000000 >> pin);
+```
+
+=> Giả sử set chân PIN4 về mức cao thì pin=5, 0b10000000 dịch sang phải 5 bit là: 0b00001000 rồi thực hiện phép OR với PORTA thì cho kết quả là: 0b00001000 (chân PIN4 đã set về mức cao)
+
+> Thuật toán set mức thấp: PORTA=0b11111111
+```
+    PORTA = PORTA & ~(0b10000000 >> pin); 
+```
+
+=> Giả sử set chân PIN3 về mức thấp thì pin=4, 0b10000000 dịch sang phải 4 bit là: 0b00010000, NOT của 0b00010000 là 0b11101111 rồi thực hiện phép AND với PORTA thì cho kết quả là: 0b11101111 (chân PIN3 đã set về mức thấp)
 
 </details>
 
