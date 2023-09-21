@@ -1085,7 +1085,7 @@ Ghi chú:
     + CAN Tranceiver: xuất ra 2 mức điện áp CAN_H và CAN_L
   - 2 đầu dây có 2 điện trở 120Ω -> tiêu chuẩn CAN 2.0
   - 1 node có thể vừa truyền và nhận data
-  - CAN -> chống nhiễu (bắt chéo 2 dây CAN_H, CAN_L -> khoảng cách tiếp xúc 2 dây với nguồn phát ra từ trường là như nhau -> độ nhiễu như nhau -> hiệu 2 điện áp trên CAN H và CAN L là như nhau)
+  - CAN -> chống nhiễu (bắt chéo 2 dây CAN_H, CAN_L -> khoảng cách tiếp xúc 2 dây với nguồn phát ra từ trường là như nhau -> độ nhiễu như nhau -> hiệu 2 điện áp trên CAN_H, CAN_L là như nhau)
   - MCU sẽ gửi tín hiệu (bit 1, 0) xuống CAN Controller -> điều khiển CAN Tranceiver xuất 2 điện áp CAN_H, CAN_L
 
 #### Trạng thái "dominant" và "recessive"
